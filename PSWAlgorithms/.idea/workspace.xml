@@ -1,0 +1,408 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="a705fa29-be4d-4f78-a352-1aaad67cb06d" name="Default Changelist" comment="" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1ZrviIllwP3S8LWl1vbzror9Xdd" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="last_opened_file_path" value="C:/Pushkar Goyal/Deployments/2020_08_10/SL_DETAIL_DENORM_RUN_ADHOC.py" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\pgoyal\iCloudDrive\Documents\STSworkspace\General Learning\PSWAlgorithms\src\main\py\com\algo\Algos_Search" />
+      <recent name="C:\Users\pgoyal\iCloudDrive\Documents\STSworkspace\General Learning\PSWAlgorithms\src\main\py\com\algo\Algos_DP" />
+      <recent name="C:\Users\pgoyal\iCloudDrive\Documents\STSworkspace\General Learning\PSWAlgorithms\src\main\py\com\algo\Algos_DictionariesHashMaps" />
+      <recent name="C:\Users\pgoyal\iCloudDrive\Documents\STSworkspace\General Learning\PSWAlgorithms\src\main\py\com\algo\Algos_Arrays" />
+      <recent name="C:\Users\pgoyal\iCloudDrive\Documents\STSworkspace\General Learning\PSWAlgorithms\src\main\py\com\algo\Algos_LinkedLists" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Pushkar Goyal\Deployments\2020_06_15" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Python.FB_SortDict">
+    <configuration name="CCI_CircusTowerRoutine" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="PSWAlgorithms" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/main/py/com/algo/Algos_Search" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/main/py/com/algo/Algos_Search/CCI_CircusTowerRoutine.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="CCI_SearchinRotatedArray" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="PSWAlgorithms" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/main/py/com/algo/Algos_Search" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/main/py/com/algo/Algos_Search/CCI_SearchinRotatedArray.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="FB_SortDict" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="PSWAlgorithms" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/main/py/com/algo/Algos_DictionariesHashMaps" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/main/py/com/algo/Algos_DictionariesHashMaps/FB_SortDict.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="GFG_LargestNumberFormedFromArray" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="PSWAlgorithms" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/main/py/com/algo/Algos_Arrays" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/main/py/com/algo/Algos_Arrays/GFG_LargestNumberFormedFromArray.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="SS_Sorting" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="PSWAlgorithms" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="$USER_HOME$/PycharmProjects/Basics/venv/bin/python" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/main/py/com/algo/SS" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/main/py/com/algo/SS/SS_Sorting.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="SentenceReversal" type="PythonConfigurationType" factoryName="Python">
+      <module name="PSWAlgorithms" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/main/py/com/algo/testing" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="C:\Users\pgoyal\iCloudDrive\Documents\STSworkspace\General Learning\PSWAlgorithms\src\main\py\com\algo\Algos_Arrays\Misc_SentenceReversal.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Python.SentenceReversal" />
+      <item itemvalue="Python.CCI_CircusTowerRoutine" />
+      <item itemvalue="Python.CCI_SearchinRotatedArray" />
+      <item itemvalue="Python.SS_Sorting" />
+      <item itemvalue="Python.FB_SortDict" />
+      <item itemvalue="Python.GFG_LargestNumberFormedFromArray" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.FB_SortDict" />
+        <item itemvalue="Python.GFG_LargestNumberFormedFromArray" />
+        <item itemvalue="Python.SS_Sorting" />
+        <item itemvalue="Python.CCI_CircusTowerRoutine" />
+        <item itemvalue="Python.CCI_SearchinRotatedArray" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="StructureViewFactory">
+    <option name="ACTIVE_ACTIONS" value=",SHOW_INHERITED" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a705fa29-be4d-4f78-a352-1aaad67cb06d" name="Default Changelist" comment="" />
+      <created>1584042505010</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1584042505010</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="631" y="76" key="#CCI_BalancedTree" timestamp="1595853649824">
+      <screen x="0" y="0" width="1920" height="1032" />
+    </state>
+    <state x="631" y="76" key="#CCI_BalancedTree/0.0.1920.1032/-1920.0.1920.1080@0.0.1920.1032" timestamp="1595853649824" />
+    <state x="631" y="76" key="#CCI_BinaryTreeMinHeightSortedArray" timestamp="1595906270488">
+      <screen x="0" y="0" width="1920" height="1032" />
+    </state>
+    <state x="631" y="76" key="#CCI_BinaryTreeMinHeightSortedArray/0.0.1920.1032@0.0.1920.1032" timestamp="1595906270488" />
+    <state x="631" y="76" key="#CCI_DepthLinkedLists" timestamp="1595936365562">
+      <screen x="0" y="0" width="1920" height="1032" />
+    </state>
+    <state x="631" y="76" key="#CCI_DepthLinkedLists/0.0.1920.1032@0.0.1920.1032" timestamp="1595936365562" />
+    <state x="631" y="76" key="#CCI_InOrderSuccessor" timestamp="1595940657956">
+      <screen x="0" y="0" width="1920" height="1032" />
+    </state>
+    <state x="631" y="76" key="#CCI_InOrderSuccessor/0.0.1920.1032@0.0.1920.1032" timestamp="1595940657956" />
+    <state x="631" y="76" key="#CCI_MergeBASorted" timestamp="1596046110849">
+      <screen x="0" y="0" width="1920" height="1032" />
+    </state>
+    <state x="631" y="76" key="#CCI_MergeBASorted/0.0.1920.1032/-1920.0.1920.1080@0.0.1920.1032" timestamp="1596046110849" />
+    <state x="631" y="76" key="#CCI_SortAnagrams" timestamp="1596049466963">
+      <screen x="0" y="0" width="1920" height="1032" />
+    </state>
+    <state x="631" y="76" key="#CCI_SortAnagrams/0.0.1920.1032/-1920.0.1920.1080@0.0.1920.1032" timestamp="1596049466963" />
+    <state x="631" y="76" key="#GFG_LargestNumberFormedFromArray" timestamp="1596048999605">
+      <screen x="0" y="0" width="1920" height="1032" />
+    </state>
+    <state x="631" y="76" key="#GFG_LargestNumberFormedFromArray/0.0.1920.1032/-1920.0.1920.1080@0.0.1920.1032" timestamp="1596048999605" />
+    <state x="631" y="91" key="#GFG_MatrixChainMultiplication" timestamp="1594145273708">
+      <screen x="0" y="0" width="1920" height="1032" />
+    </state>
+    <state x="631" y="91" key="#GFG_MatrixChainMultiplication/0.0.1920.1032/-1920.0.1920.1080@0.0.1920.1032" timestamp="1594145273708" />
+    <state x="631" y="76" key="#HR_AlternateCharacters" timestamp="1595099972494">
+      <screen x="0" y="0" width="1920" height="1032" />
+    </state>
+    <state x="631" y="76" key="#HR_AlternateCharacters/0.0.1920.1032@0.0.1920.1032" timestamp="1595099972494" />
+    <state x="631" y="76" key="#HR_CastleOnGrid" timestamp="1594817724427">
+      <screen x="0" y="0" width="1920" height="1032" />
+    </state>
+    <state x="631" y="76" key="#HR_CastleOnGrid/0.0.1920.1032/-1920.0.1920.1080@0.0.1920.1032" timestamp="1594817724427" />
+    <state x="631" y="76" key="#HR_CountTriplets" timestamp="1595089418727">
+      <screen x="0" y="0" width="1920" height="1032" />
+    </state>
+    <state x="631" y="76" key="#HR_CountTriplets/0.0.1920.1032@0.0.1920.1032" timestamp="1595089418727" />
+    <state x="631" y="76" key="#HR_HashTableIceCreamParlor" timestamp="1594529543414">
+      <screen x="0" y="0" width="1920" height="1032" />
+    </state>
+    <state x="631" y="76" key="#HR_HashTableIceCreamParlor/0.0.1920.1032@0.0.1920.1032" timestamp="1594529543414" />
+    <state x="631" y="76" key="#HR_HuffmanDecoding" timestamp="1594989937109">
+      <screen x="0" y="0" width="1920" height="1032" />
+    </state>
+    <state x="631" y="76" key="#HR_HuffmanDecoding/0.0.1920.1032/-1920.0.1920.1080@0.0.1920.1032" timestamp="1594989937109" />
+    <state x="631" y="76" key="#HR_ISBST" timestamp="1594923939842">
+      <screen x="0" y="0" width="1920" height="1032" />
+    </state>
+    <state x="631" y="76" key="#HR_ISBST/0.0.1920.1032@0.0.1920.1032" timestamp="1594923939842" />
+    <state x="631" y="76" key="#HR_LowestCommonAncestor" timestamp="1594922284831">
+      <screen x="0" y="0" width="1920" height="1032" />
+    </state>
+    <state x="631" y="76" key="#HR_LowestCommonAncestor/0.0.1920.1032@0.0.1920.1032" timestamp="1594922284831" />
+    <state x="631" y="76" key="#HR_MakingAnagrams" timestamp="1595098980286">
+      <screen x="0" y="0" width="1920" height="1032" />
+    </state>
+    <state x="631" y="76" key="#HR_MakingAnagrams/0.0.1920.1032@0.0.1920.1032" timestamp="1595098980286" />
+    <state x="631" y="76" key="#HR_MergePointFor2LL" timestamp="1595021175316">
+      <screen x="0" y="0" width="1920" height="1032" />
+    </state>
+    <state x="631" y="76" key="#HR_MergePointFor2LL/0.0.1920.1032/-1920.0.1920.1080@0.0.1920.1032" timestamp="1595021175316" />
+    <state x="631" y="76" key="#HR_MinimumSwap" timestamp="1594491098372">
+      <screen x="0" y="0" width="1920" height="1032" />
+    </state>
+    <state x="631" y="76" key="#HR_MinimumSwap/0.0.1920.1032@0.0.1920.1032" timestamp="1594491098372" />
+    <state x="631" y="76" key="#HR_NewYearChaos" timestamp="1594485701862">
+      <screen x="0" y="0" width="1920" height="1032" />
+    </state>
+    <state x="631" y="76" key="#HR_NewYearChaos/0.0.1920.1032@0.0.1920.1032" timestamp="1594485701862" />
+    <state x="631" y="76" key="#HR_Pairs" timestamp="1594493665829">
+      <screen x="0" y="0" width="1920" height="1032" />
+    </state>
+    <state x="631" y="76" key="#HR_Pairs/0.0.1920.1032@0.0.1920.1032" timestamp="1594493665829" />
+    <state x="631" y="76" key="#HR_PoisonousPlants" timestamp="1594900603183">
+      <screen x="0" y="0" width="1920" height="1032" />
+    </state>
+    <state x="631" y="76" key="#HR_PoisonousPlants/0.0.1920.1032/-1920.0.1920.1080@0.0.1920.1032" timestamp="1594900603183" />
+    <state x="631" y="76" key="#HR_SherlockAnagrams" timestamp="1595097590979">
+      <screen x="0" y="0" width="1920" height="1032" />
+    </state>
+    <state x="631" y="76" key="#HR_SherlockAnagrams/0.0.1920.1032@0.0.1920.1032" timestamp="1595097590979" />
+    <state x="631" y="76" key="#HR_SherlockSpecialString" timestamp="1595124277244">
+      <screen x="0" y="0" width="1920" height="1032" />
+    </state>
+    <state x="631" y="76" key="#HR_SherlockSpecialString/0.0.1920.1032@0.0.1920.1032" timestamp="1595124277244" />
+    <state x="631" y="76" key="#HR_SwapNodes" timestamp="1594532466698">
+      <screen x="0" y="0" width="1920" height="1032" />
+    </state>
+    <state x="631" y="76" key="#HR_SwapNodes/0.0.1920.1032@0.0.1920.1032" timestamp="1594532466698" />
+    <state x="631" y="76" key="#HR_TwoStrings" timestamp="1595091590433">
+      <screen x="0" y="0" width="1920" height="1032" />
+    </state>
+    <state x="631" y="76" key="#HR_TwoStrings/0.0.1920.1032@0.0.1920.1032" timestamp="1595091590433" />
+    <state x="631" y="76" key="#Tree_IsBST" timestamp="1594923357051">
+      <screen x="0" y="0" width="1920" height="1032" />
+    </state>
+    <state x="631" y="76" key="#Tree_IsBST/0.0.1920.1032@0.0.1920.1032" timestamp="1594923357051" />
+    <state x="686" y="213" key="FileChooserDialogImpl" timestamp="1597263516408">
+      <screen x="0" y="0" width="1920" height="1032" />
+    </state>
+    <state x="686" y="213" key="FileChooserDialogImpl/0.0.1920.1032/-1920.0.1920.1080@0.0.1920.1032" timestamp="1597263516408" />
+    <state x="686" y="213" key="FileChooserDialogImpl/0.0.1920.1032/1920.0.1920.1080@0.0.1920.1032" timestamp="1593431597925" />
+    <state x="686" y="213" key="FileChooserDialogImpl/0.0.1920.1032@0.0.1920.1032" timestamp="1594645669642" />
+    <state width="1892" height="253" key="GridCell.Tab.0.bottom" timestamp="1596220922429">
+      <screen x="0" y="0" width="1920" height="1032" />
+    </state>
+    <state width="1892" height="253" key="GridCell.Tab.0.bottom/0.0.1920.1032/-1920.0.1920.1080@0.0.1920.1032" timestamp="1596220922428" />
+    <state width="1892" height="253" key="GridCell.Tab.0.bottom/0.0.1920.1032/1920.0.1920.1080@0.0.1920.1032" timestamp="1593124339565" />
+    <state width="1892" height="253" key="GridCell.Tab.0.bottom/0.0.1920.1032@0.0.1920.1032" timestamp="1596149389398" />
+    <state width="1892" height="253" key="GridCell.Tab.0.center" timestamp="1596220922428">
+      <screen x="0" y="0" width="1920" height="1032" />
+    </state>
+    <state width="1892" height="253" key="GridCell.Tab.0.center/0.0.1920.1032/-1920.0.1920.1080@0.0.1920.1032" timestamp="1596220922428" />
+    <state width="1892" height="253" key="GridCell.Tab.0.center/0.0.1920.1032/1920.0.1920.1080@0.0.1920.1032" timestamp="1593124339564" />
+    <state width="1892" height="253" key="GridCell.Tab.0.center/0.0.1920.1032@0.0.1920.1032" timestamp="1596149389395" />
+    <state width="1892" height="253" key="GridCell.Tab.0.left" timestamp="1596220922428">
+      <screen x="0" y="0" width="1920" height="1032" />
+    </state>
+    <state width="1892" height="253" key="GridCell.Tab.0.left/0.0.1920.1032/-1920.0.1920.1080@0.0.1920.1032" timestamp="1596220922428" />
+    <state width="1892" height="253" key="GridCell.Tab.0.left/0.0.1920.1032/1920.0.1920.1080@0.0.1920.1032" timestamp="1593124339564" />
+    <state width="1892" height="253" key="GridCell.Tab.0.left/0.0.1920.1032@0.0.1920.1032" timestamp="1596149389395" />
+    <state width="1892" height="253" key="GridCell.Tab.0.right" timestamp="1596220922428">
+      <screen x="0" y="0" width="1920" height="1032" />
+    </state>
+    <state width="1892" height="253" key="GridCell.Tab.0.right/0.0.1920.1032/-1920.0.1920.1080@0.0.1920.1032" timestamp="1596220922428" />
+    <state width="1892" height="253" key="GridCell.Tab.0.right/0.0.1920.1032/1920.0.1920.1080@0.0.1920.1032" timestamp="1593124339565" />
+    <state width="1892" height="253" key="GridCell.Tab.0.right/0.0.1920.1032@0.0.1920.1032" timestamp="1596149389397" />
+    <state x="347" y="56" width="1479" height="920" key="SettingsEditor" timestamp="1596132697970">
+      <screen x="0" y="0" width="1920" height="1032" />
+    </state>
+    <state x="347" y="56" key="SettingsEditor/0.0.1920.1032@0.0.1920.1032" timestamp="1596132697970" />
+    <state x="594" y="300" width="731" height="428" key="com.intellij.ide.util.TipDialog" timestamp="1597240463700">
+      <screen x="0" y="0" width="1920" height="1032" />
+    </state>
+    <state x="594" y="300" width="731" height="428" key="com.intellij.ide.util.TipDialog/0.0.1920.1032/-1920.0.1920.1080@0.0.1920.1032" timestamp="1597240463700" />
+    <state x="594" y="300" key="com.intellij.ide.util.TipDialog/0.0.1920.1032/1920.0.1920.1080@0.0.1920.1032" timestamp="1593431538217" />
+    <state x="594" y="300" key="com.intellij.ide.util.TipDialog/0.0.1920.1032@0.0.1920.1032" timestamp="1597058651106" />
+    <state x="518" y="40" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1595936138667">
+      <screen x="0" y="0" width="1920" height="1032" />
+    </state>
+    <state x="518" y="40" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1920.1032@0.0.1920.1032" timestamp="1595936138666" />
+    <state x="588" y="206" width="1125" height="665" key="find.popup" timestamp="1596147276022">
+      <screen x="0" y="0" width="1920" height="1032" />
+    </state>
+    <state x="588" y="206" width="1125" height="665" key="find.popup/0.0.1920.1032/-1920.0.1920.1080@0.0.1920.1032" timestamp="1596048130568" />
+    <state x="588" y="206" width="1125" height="665" key="find.popup/0.0.1920.1032@0.0.1920.1032" timestamp="1596147276022" />
+    <state x="539" y="-1" width="840" height="1034" key="search.everywhere.popup" timestamp="1588854500269">
+      <screen x="0" y="0" width="1920" height="1032" />
+    </state>
+    <state x="539" y="-1" width="840" height="1034" key="search.everywhere.popup/0.0.1920.1032/1920.0.1920.1080@0.0.1920.1032" timestamp="1588854500269" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/src/main/py/com/algo/Algos_Trees/GFG_BinaryTreeLevelOrderTraversal.py</url>
+          <line>61</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/src/main/py/com/algo/Algos_DP/GFG_MatrixChainMultiplication.py</url>
+          <line>7</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/src/main/py/com/algo/SS/SS_Sorting.py</url>
+          <line>34</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ScopeChooserConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>
