@@ -1,9 +1,10 @@
-This article discusses the quantitative estimation of energy performance of residential building using statistical machine learning tools.
-It studied the impact of eight input variables (relative compactness, surface area, wall area, roof area, overall height, orientation, glazing area, glazing area distribution) on two output variables, namely heating load (HL) and cooling load (CL) using robust classical regression and state of the art nonlinear and non-parametric statistical machine learning tools (random forests).
-This article answers the following questions:
-	• It clarifies on how to develop a statistical qualitative machine learning model for a problem. It explains the steps required like data analysis using the statistical methods, develop a model based on linearity of the variables, and finally testing of the model using cross validation techniques.
-	• It explains on how normalization helps to handle different  range of values for different variables, how plotting probability distribution or histograms can explain the statistical properties of the variables.
-	• It explains on different methods to check the association of different variables like spearman rank correlation coefficient to check association strength, p values to check statistical significance of relationships, mutual information to quantify any arbitrary relationships.
-	• Due to continuous range of output variables regression model makes more sense. It explains MAE, MSE, MRE are helpful for cross validation of the model.
-	• It shows how the most important variable from logical and practical purposes may not even be correlated to the output. E.g. glazing area in the provided paper. It explains why correlation shouldn’t be assumed for causality.
-	• It explains how a generic statistical machine learning model can be effective as compared to simulation model as the same ML model can be used to add or remove additional input or output variables while lot of changes or rework may be required in case of simulation models.
+In this paper, researchers used the logistic regression method to describe the presence or absence of the landslides based on a set of independent parameters like lithology, bed rock-slope relationship, lineaments, slope gradient, aspect, elevation and road network.
+ 
+The article answers the following questions - 
+	A. What should be the criteria for selecting the independent variables? They should be operational, complete, non-uniform, measurable, and non-redundant. The article explains while precipitation is the main triggering factor for the landslides it is not considered for the study as it is uniform throughout the study area.
+	B. How to calculate densities for the multivariate parameters using bivariate statistical analysis (BSA)? The article explains and shows it for all independent parameters having multiple classes in the "Landslide Influencing Parameters" section.
+	C. How to solve the problem of long regression equations and multicollinearity found in the general approach of assigning binary values to each class of an independent parameter? In this article, it is solved by using densities for each class of an independent parameter while regression is applied only on the independent parameters and selecting the class with the highest density for the parameter with a positive coefficient.
+	D. How to categorize the continuous values, obtained based on the probabilities, for the dependent variable using different statistical systems? The article discussed four different statistical systems like quantiles, natural breaks, equal intervals and standard deviations and explains the merits and demerits of the same.
+	 
+The question arises - 
+	A. The article mentions certain statistics and their values under "statistical results" but provide fewer details on the way to calculate those values. So it leaves this open to the reader on how to calculate these values.
