@@ -1,10 +1,4 @@
-In this paper, researchers used the logistic regression method to describe the presence or absence of the landslides based on a set of independent parameters like lithology, bed rock-slope relationship, lineaments, slope gradient, aspect, elevation and road network.
- 
-The article answers the following questions - 
-	A. What should be the criteria for selecting the independent variables? They should be operational, complete, non-uniform, measurable, and non-redundant. The article explains while precipitation is the main triggering factor for the landslides it is not considered for the study as it is uniform throughout the study area.
-	B. How to calculate densities for the multivariate parameters using bivariate statistical analysis (BSA)? The article explains and shows it for all independent parameters having multiple classes in the "Landslide Influencing Parameters" section.
-	C. How to solve the problem of long regression equations and multicollinearity found in the general approach of assigning binary values to each class of an independent parameter? In this article, it is solved by using densities for each class of an independent parameter while regression is applied only on the independent parameters and selecting the class with the highest density for the parameter with a positive coefficient.
-	D. How to categorize the continuous values, obtained based on the probabilities, for the dependent variable using different statistical systems? The article discussed four different statistical systems like quantiles, natural breaks, equal intervals and standard deviations and explains the merits and demerits of the same.
-	 
-The question arises - 
-	A. The article mentions certain statistics and their values under "statistical results" but provide fewer details on the way to calculate those values. So it leaves this open to the reader on how to calculate these values.
+Hi Amarprit,
+
+You are right that the article mentioned other approaches like qualitative and quantitative being used in the past but they picked linear regression only to relax certain assumptions and to simplify the model after combining it with bivariate statistical analyses (BSA).
+Decision trees or random forests may give better result but they will add a lot of complexity in the model.
