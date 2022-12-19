@@ -45,3 +45,25 @@ Time Complexity: O(2^N)
 Auxiliary Space Complexity: O(N)
 
 '''
+def footballScore(coins, total):
+    # Write your code here
+
+
+    return 0
+
+if __name__ == '__main__':
+    # fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    coins_count = int(input("Enter Coin Type Count: ").strip())
+    coins = []
+
+    for _ in range(coins_count):
+        coins_item = int(input("Enter Coin Types: ").strip())
+        coins.append(coins_item)
+
+    total = int(input("Enter Total to be achieved: ").strip())
+
+    result = footballScore(coins, total)
+    print(f"Final Result: {result}")
+    # fptr.write(str(result) + '\n')
+    # fptr.close()
