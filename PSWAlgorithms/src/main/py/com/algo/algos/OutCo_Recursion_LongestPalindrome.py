@@ -79,13 +79,109 @@ class Solution:
 
     def longestPalinSubseq(self, S):
 
+        def check_palindrome(value):
+            start = 0
+            end = len(value)-1
+            while start <= end:
+                if value[start] == value[end]:
+                    start += 1
+                    end -= 1
+                else:
+                    return False
 
+            return True
 
-        return 0
+        mid = len(S) // 2
+        ret_string = S[mid]
+        L = mid - 1
+        R = mid + 1
+        print(f"Start - L: {L}\tR:{R}\t\t\n"
+              f"ret_string: {ret_string}")
+        while L > 0 or R < len(S):
+            print(f"L: {L}\tR:{R}\t\t{S[L]}-{S[R]}\n"
+                  f"ret_string: {ret_string}")
+            if L >=0:
+                new_string = S[L] + ret_string + S[R]
+            else:
+                new_string = ret_string + S[R]
+
+            if R <= len(S)-1:
+                new_string = S[L] + ret_string + S[R]
+            else:
+                new_string = S[L] + ret_string
+
+            print(f"base- new_string: {new_string}\n\n")
+            if check_palindrome(new_string):
+                ret_string = new_string
+                L -= 1
+                R += 1
+            else:
+                traverse_R = R+1
+                traverse_found = 0
+                while traverse_R < len(S):
+                    new_string = S[L] + ret_string + S[traverse_R]
+                    print(f"Right traverse- new_string: {new_string}")
+                    if check_palindrome(new_string):
+                        traverse_found = 1
+                        ret_string = new_string
+                        L -= 1
+                        R = traverse_R+1
+                        break
+
+                    traverse_R += 1
+
+                print(f"After Right traverse L: {L}\tR:{R}\t\t{S[L]}-{S[R]}\ttraverse_found:{traverse_found}\n"
+                      f"ret_string: {ret_string}")
+                traverse_L = L-1
+                while traverse_L >= 0:
+                    new_string = S[traverse_L] + ret_string + S[R]
+                    print(f"Left traverse- new_string: {new_string}")
+                    if check_palindrome(new_string):
+                        traverse_found = 1
+                        ret_string = new_string
+                        L = traverse_L-1
+                        R += 1
+                        break
+
+                    traverse_L -= 1
+
+                print(f"After Left traverse L: {L}\tR:{R}\t\t{S[L]}-{S[R]}\ttraverse_found:{traverse_found}\n"
+                      f"ret_string: {ret_string}\n\n")
+
+                if traverse_found == 0:
+                    L -= 1
+                    R += 1
+
+        # if only one character in the ret string then check the mid+1 and mid-1 as palindrome
+        if len(ret_string) == 1:
+            if mid+1 < len(S):
+                new_string = ret_string + S[mid+1]
+                print(f"Right to Mid- new_string: {new_string}")
+                if check_palindrome(new_string):
+                    ret_string = new_string
+                    print(ret_string)
+                    return len(ret_string)
+
+            if mid-1 > 0:
+                new_string = S[mid-1] + ret_string
+                print(f"Left to Mid- new_string: {new_string}")
+                if check_palindrome(new_string):
+                    ret_string = new_string
+                    print(ret_string)
+                    return len(ret_string)
+
+        print(ret_string)
+        return len(ret_string)
 
 if __name__ == '__main__':
-    input_string = input("Enter String: ")
-    solution = Solution()
-    result = solution.longestPalinSubseq(input_string)
-    # longest_palindrome(input_string)
-    print(f"result: {result}")
+    no_of_tests = int(input("No of tests: "))
+    # bbabcbcab - 7
+    # vtvvv - 5
+    # pwnnb - 2
+    # ttbtctcbt - 7
+    for i in range(no_of_tests):
+        input_string = input("Enter String: ")
+        solution = Solution()
+        result = solution.longestPalinSubseq(input_string)
+        # longest_palindrome(input_string)
+        print(f"result: {result}")
