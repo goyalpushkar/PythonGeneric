@@ -78,4 +78,3 @@ if __name__ == '__main__':
     final_result = longest_palindrome(passed_string)
 
     print(f"final_result: {final_result}")
-
