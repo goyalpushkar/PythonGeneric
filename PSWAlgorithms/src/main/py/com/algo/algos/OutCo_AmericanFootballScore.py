@@ -45,11 +45,46 @@ Time Complexity: O(2^N)
 Auxiliary Space Complexity: O(N)
 
 '''
-def footballScore(coins, total):
+
+# Tabulation
+'''
+
+Combinations
+[2,5,3,6], 10
+ val[i, j] = val[i-1, j] + val[i, j-col[len(col)-1]]
+
+                 |   0   1   2   3   4   5   6   7   8   9   10
+    -------------|-----------------------------------------------------
+    []           |   1   0   0   0   0   0   0   0   0   0    0
+    [2]          |   1   0   1   0   1   0   1   0   1   0    1
+    [2,5]        |   1   0   1   0   1   1   1   1   1   1    2
+    [2,5,3]      |   1   0   1   1   1   2   2   2   3   3    4
+    [2,5,3,6]    |   1   0   1   1   1   2   3   2   4   4    5
+    
+Permutations
+
+
+         |   []    [2]    [2,5]    [2,5,3]     [2,5,3,6]
+    -------------------------------------------------------------------
+    0    |   1      1       1          1           1   
+    1    |   0      0       0          0           0   
+    2    |   0      1       1          1           1   
+    3    |   0      0       0          1           1   
+    4    |   0      1       1          1           1   
+    5    |   0      0       1          2           2   
+    6    |   0      1       1          2           3   
+    7    |   0      0       2          5           5   
+    8    |   0      1       1          3           5   
+    9    |   0      0       3          4           5   
+    10   |   0      1       2          8           11   
+
+'''
+
+
+def coinSum(coins, total):
     # Write your code here
 
 
-    return 0
 
 if __name__ == '__main__':
     # fptr = open(os.environ['OUTPUT_PATH'], 'w')
@@ -63,7 +98,7 @@ if __name__ == '__main__':
 
     total = int(input("Enter Total to be achieved: ").strip())
 
-    result = footballScore(coins, total)
+    result = coinSum(coins, total)
     print(f"Final Result: {result}")
     # fptr.write(str(result) + '\n')
     # fptr.close()
