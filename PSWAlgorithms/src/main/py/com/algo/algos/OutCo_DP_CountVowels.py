@@ -19,6 +19,23 @@ Time Complexity: O(5^N)
 Space Complexity: O(N)
 '''
 def countVowelStrings(n):
+    vowels = ['a','e','i','o','u']
+
+
+    def helper(build, height, n, final_result):
+        if height == n:
+            final_result.append(build)
+            return final_result
+
+        for elem in vowels:
+            final_result = helper(build+elem, height+1, n, final_result)
+
+        return final_result
+
+    final_result = []
+    final_result = helper("", 0, n, final_result)
+    print(final_result)
+    return len(final_result)
 
 
 if __name__ == '__main__':
