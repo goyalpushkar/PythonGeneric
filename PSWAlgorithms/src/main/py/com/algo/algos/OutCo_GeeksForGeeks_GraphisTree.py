@@ -60,7 +60,7 @@ class Solution:
         def is_Cycle_helper(start, adj, visited_multi):
 
             if start not in visited_nodes:
-                visited_nodes.append(list(adj.keys())[0])
+                visited_nodes.append(start)
 
             if visited_multi >= 1:
                 return False
@@ -68,9 +68,9 @@ class Solution:
             for neighbor in adj[start]:
                 if neighbor in visited_nodes:
                     visited_multi += 1
-
-                # visited_nodes[neighbor] = True
-                visited_nodes.append(neighbor)
+                else:
+                    # visited_nodes[neighbor] = True
+                    visited_nodes.append(neighbor)
 
                 is_Cycle_helper(neighbor, adj, visited_multi)
 
@@ -81,8 +81,8 @@ class Solution:
         # visited_nodes = {}
         # for key in adj.keys:
         #     visited_nodes[key] = False
-
-        return_val = is_Cycle_helper(list(adj.keys())[0], adj, visited_multi)
+        # list(adj.keys())[0]
+        return_val = is_Cycle_helper(0, adj, visited_multi)
 
         return return_val
 
@@ -104,7 +104,7 @@ if __name__ == '__main__':
         obj = Solution()
         ans = obj.isCycle(V, adj)
         if(ans):
-            print("1")
+            print("Yes It is cycle")
         else:
-            print("0")
+            print("No it is not cycle")
 # } Driver Code Ends
