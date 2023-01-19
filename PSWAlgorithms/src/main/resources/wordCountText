@@ -1,4 +1,4 @@
-Hi Amarprit,
+Hi Mohammad,
 
-You are right that the article mentioned other approaches like qualitative and quantitative being used in the past but they picked linear regression only to relax certain assumptions and to simplify the model after combining it with bivariate statistical analyses (BSA).
-Decision trees or random forests may give better result but they will add a lot of complexity in the model.
+I agree with your point that blockchain can provide cheaper and faster ways to verify educational credentials. It will also eliminate the third parties to perform this activity as different places use different third party systems to verify the educational qualification which puts extra burden on the user to get it verified from different places.  I think immutability issues can be overcome if there is a cool-off time to apply the transaction on the blockchain i.e. once students receive their grades that transaction should be committed on the blockchain in 2-3 days to resolve any discrepancy.
+IT issues will be overcome over time as this would have happened when people moved from paper documents to computerized record maintenance.
