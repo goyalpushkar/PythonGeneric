@@ -35,7 +35,6 @@ class TreeNode:
         self.left = None
         self.right = None
 
-
 # DO NOT EDIT
 # generate tree from list
 def deserialize(lst):
@@ -55,15 +54,26 @@ def deserialize(lst):
         i += 2
     return root
 
-# DO NOT EDIT
-lst = [1, 2, 3, None, None, 4, 5]
 
-sample_tree = deserialize(lst)
+def inorder(root_node, distance):
+    if root_node is not None:
+        distance += 5
+        inorder(root_node.left, distance)
+        print(f"{' '*distance}{root_node.value}")
+        inorder(root_node.right, distance)
+
 
 class Solution:
-    def invert(root):
+    def invert(self, root):
       # TODO
-      pass
+
+        def invert_helper(curr_node):
+            if curr_node is not None:
+                curr_node.left, curr_node.right = invert_helper(curr_node.right), invert_helper(curr_node.left)
+
+            return curr_node
+
+        return invert_helper(root)
 
 
 if __name__ == '__main__':
@@ -75,9 +85,12 @@ if __name__ == '__main__':
     #     for col in range(cols):
     #         matrix_board[row][col] = input(f"Enter Element for {row}-{col}: ")
     # word = input("Enter word: ")
-    lst = [1, 2, 3, None, None, 4, 5]
+    # DO NOT EDIT
+    lst = [4,2,7,1,3,6,9]
     sample_tree = deserialize(lst)
+    inorder(sample_tree, 1)
 
     solution = Solution()
     final_Result = solution.invert(sample_tree)
     print(f"final_Result: {final_Result}")
+    inorder(final_Result, 1)
