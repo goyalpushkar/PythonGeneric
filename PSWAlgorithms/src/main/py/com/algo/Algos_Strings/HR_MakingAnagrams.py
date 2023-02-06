@@ -52,7 +52,7 @@ import re
 import sys
 
 # Complete the makeAnagram function below.
-def makeAnagram(a, b):
+def makeAnagram_old(a, b):
     elem_dict = {}
     for elem in a:
         elem_dict[elem] = (elem_dict.get(elem, (0,0))[0] + 1, 1)
@@ -70,6 +70,24 @@ def makeAnagram(a, b):
         total_deletions += value[0]
 
     return total_deletions
+
+# 02/05/2023
+def makeAnagram(a, b):
+    # Write your code here
+    a_chars = {}
+    for index in range(len(a)):
+        a_chars[a[index]] = a_chars.get(a[index], 0) + 1
+
+    for index in range(len(b)):
+        a_chars[b[index]] = a_chars.get(b[index], 0) - 1
+
+    # print(a_chars)
+    required_deletions = 0
+    for elem in a_chars.keys():
+        if a_chars[elem] != 0:
+            required_deletions += abs(a_chars[elem])
+
+    return required_deletions
 
 if __name__ == '__main__':
     #fptr = open(os.environ['OUTPUT_PATH'], 'w')

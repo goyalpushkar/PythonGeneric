@@ -205,6 +205,33 @@ def stepPerms(n):
     else:
         return stepPerms(n - 1) + stepPerms(n - 2) + stepPerms(n - 3)
 
+# After OutCo
+# time limit failure for 5,6,7,8
+# after adding dictionary all test cases passed
+def stepPerms_new(n):
+    # Write your code here
+
+    def stepPerms_helper(left):
+
+        if left in calc:
+            return calc[left]
+
+        if left < 0:
+            return 0
+
+        if left == 0:
+            calc[left] = 1
+            return 1
+
+        final = stepPerms_helper(left - 1) + stepPerms_helper(left - 2) + stepPerms_helper(left - 3)
+        calc[left] = final
+
+        return final
+
+    calc = {}
+    return stepPerms_helper(n)
+
+
 if __name__ == '__main__':
     #fptr = open(os.environ['OUTPUT_PATH'], 'w')
     s = int(input("No of staircases - "))
