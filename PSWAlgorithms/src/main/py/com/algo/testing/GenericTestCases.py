@@ -6,15 +6,17 @@ realpath = os.path.realpath(__file__)
 basename = os.path.basename(__file__)
 dirname = os.path.dirname(__file__)
 parentdir = os.path.dirname(dirname)
-grandparentdir = os.path.dirname(parentdir)
+# grandparentdir = os.path.dirname(parentdir)
 # print(f"abspath: {abspath}\nrealpath: {realpath}\ndirname: {dirname}\nbasename: {basename}\n"
 #       f"parentdir: {parentdir}\ngrandparentdir: {grandparentdir}")
 sys.path.append(parentdir)
-sys.path.append(grandparentdir)
+# sys.path.append(grandparentdir)
 
 # from LeetCode_BullsAndCows import Solution
-from LeetCode_Search_FinMin_inRotatedSearchArray import Solution
+from algos.LeetCode_Search_FinMin_inRotatedSearchArray import Solution
 from Algos_Strings.HR_SpecialStringAgain import Solution
+from Algos_GreedyAlgorithms.HR_MinAbsDiffInArray import Solution
+from Algos_GreedyAlgorithms.HR_ReverseShuffleMerge import Solution
 
 # 2 Strings test case
 def two_strings():
@@ -36,6 +38,7 @@ def array_number():
         #sol.search(s, t)
     print(f"final_result: {final_result}\n")
 
+
 # String and number test case
 def string_number():
     s = input("Enter string: ")
@@ -47,9 +50,30 @@ def string_number():
     print(f"final_result: {final_result}\n")
 
 
+# Array only test case
+def array_only():
+    s = list(map(int, input("Enter array as space-separated values: ").split(",")))
+    print(f"s: {s}")
+    sol = Solution()
+    final_result = sol.minimumAbsoluteDifference(s)
+        #sol.search(s, t)
+    print(f"final_result: {final_result}\n")
+
+# String only test case
+def string_only():
+    s = input("Enter string value: ")
+    print(f"s: {s}")
+    sol = Solution()
+    final_result = sol.reverseShuffleMerge(s)
+        #sol.search(s, t)
+    print(f"final_result: {final_result}\n")
+
+
 if __name__ == '__main__':
     n = int(input("Enter no of test cases: "))
 
     for i in range(n):
-        string_number()
+        # string_number()
+        # array_only()
+        string_only()
 
