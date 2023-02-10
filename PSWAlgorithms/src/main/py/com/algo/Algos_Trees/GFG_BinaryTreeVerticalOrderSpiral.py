@@ -61,6 +61,65 @@ class Node:
         self.left = None
         self.right = None
 
+
+class Solution:
+    def zigzagLevelOrder(self, root):
+
+        from collections import deque
+
+        if root is None:
+            return []
+
+        # bfs_traversal_odd = deque()
+        # bfs_traversal_even = deque()
+        bfs_traversal = deque()
+        return_array = []
+
+        bfs_traversal.append(root)
+        level = 1
+        while len(bfs_traversal) > 0:  # or len(bfs_traversal_even) > 0:
+            internal_array = deque()
+            for index in range(len(bfs_traversal)):
+                new_elem = bfs_traversal.popleft()
+                internal_array.append(new_elem.data)
+
+                if new_elem.left is not None:
+                    bfs_traversal.append(new_elem.left)
+
+                if new_elem.right is not None:
+                    bfs_traversal.append(new_elem.right)
+
+            # if level % 2 == 1 and len(bfs_traversal_odd) > 0: # odd
+            #     for index in range(len(bfs_traversal_odd)):
+            #         new_elem = bfs_traversal_odd.popleft()
+            #         internal_array.append(new_elem.val)
+            #         if new_elem.right is not None:
+            #             bfs_traversal_even.append(new_elem.right)
+
+            #         if new_elem.left is not None:
+            #             bfs_traversal_even.append(new_elem.left)
+
+            # elif level % 2 == 0 and len(bfs_traversal_even) > 0:   # even
+            #     for index in range(len(bfs_traversal_even)):
+            #         new_elem = bfs_traversal_even.popleft()
+            #         internal_array.append(new_elem.val)
+            #         if new_elem.left is not None:
+            #             bfs_traversal_even.append(new_elem.left)
+
+            #         if new_elem.right is not None:
+            #             bfs_traversal_even.append(new_elem.right)
+
+            # new_values = []
+            if level % 2 == 0:  # even
+                internal_array.reverse()
+                # while len(internal_array) > 0:
+                #     new_values.append(internal_array.pop())
+
+            level += 1
+            return_array.append(internal_array)
+
+        return return_array
+
 def buildTree(s):
     if (len(s) == 0 or s[0] == "N"):
         return None
@@ -117,7 +176,8 @@ if __name__ == "__main__":
     for i in range(0, t):
         s = input("Nodes: ")
         root = buildTree(s)
-        res = verticalOrder(root)
+        sol = Solution()
+        res = sol.zigzagLevelOrder(root)
 
         for i in res:
             print(i, end=" ")

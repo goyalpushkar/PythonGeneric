@@ -10,6 +10,24 @@ class Height:
     def __init__(self):
         self.height = 0
 
+class Solution:
+    def diameterOfBinaryTree(self, root):
+        import math
+
+        def diameter_helper(root, max_height, height):
+            if root is None:
+                return (max_height, 0)
+
+            left_height = diameter_helper(root.left, max_height, height + 1)
+            right_height = diameter_helper(root.right, max_height, height + 1)
+            print(f"{' '*height} {root.value} left_height: {left_height}")
+            print(f"{' '*height} {root.value} right_height: {right_height}")
+            max_height = max(left_height[0], right_height[0], left_height[1] + right_height[1])
+
+            return (max_height, max(left_height[1], right_height[1])+1)
+
+        return diameter_helper(root, -math.inf, 1)[0]
+
 
 def diameterOpt(root, height):
     # to store height of left and right subtree

@@ -3,6 +3,7 @@ Created on Jan 23, 2020
 
 @author: goyalpushkar
 '''
+from collections import Counter
 
 def anagramSolution1(s1, s2):
     second_list = list(s2)
@@ -98,7 +99,24 @@ def anagramSolution4(s1, s2):
             return False
         
     return True
-    
+
+def isAnagram(self, s: str, t: str) -> bool:
+    return Counter(s) == Counter(t)
+
+def isAnagram(self, s: str, t: str) -> bool:
+    ana_dict = {}
+    for elem in s:
+        ana_dict[elem] = ana_dict.get(elem, 0) + 1
+
+    for elem in t:
+        ana_dict[elem] = ana_dict.get(elem, 0) - 1
+
+    for key in ana_dict.keys():
+        if ana_dict[key] != 0:
+            return False
+
+    return True
+
 if __name__ == '__main__':
     print(anagramSolution2('abcd','bdca'))        
     print(anagramSolution4('abcd','bdca'))    

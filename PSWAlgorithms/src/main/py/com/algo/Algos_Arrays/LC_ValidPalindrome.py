@@ -44,3 +44,27 @@ class Solution:
         #alphanum = set('abcdefghijklmnopqrstuvwxyz0123456789')
         s = [x for x in s.lower() if x.isalnum()]
         return s == s[::-1]
+
+    def isPalindrome(self, s: str) -> bool:
+
+        if len(s) == 0:
+            return True
+
+        start = 0
+        end = len(s) - 1
+
+        while start <= end:
+            while start < len(s) - 1 and not s[start].isalnum():
+                start += 1
+
+            while end >= 0 and not s[end].isalnum():
+                end -= 1
+
+            if s[start].lower() == s[end].lower():
+                start += 1
+                end -= 1
+            else:
+                return False
+
+        return True
+
