@@ -21,6 +21,9 @@ from Algos_Trees.GFG_DiameterTree import Solution
 from Algos_DictionariesHashMaps.HR_IceCreamParlor import Solution
 from Algos_Search.HR_MaximumSubArraySum import Solution
 from Algos_Backtracking.NeetCode_Subsets import Solution
+from Algos_Backtracking.NeetCode_Subsets2 import Solution
+from Algos_Backtracking.NeetCode_CombinationSum import Solution
+from Algos_Backtracking.NeetCode_CombinationSum2 import Solution
 
 # Node class for a binary tree node
 class TreeNode:
@@ -60,11 +63,11 @@ def two_strings():
 
 # Array and number test case
 def array_number():
-    s = list(map(int, input("Enter array as space-separated values: ").split()))
+    s = list(map(int, input("Enter array as comma-separated values: ").split(",")))
     t = int(input("Enter target: "))
     print(f"s: {s} \t t: {t}")
     sol = Solution()
-    final_result = sol.maximumSum(s, t)
+    final_result = sol.combinationSum2(s, t)
         #sol.search(s, t)
     print(f"final_result: {final_result}\n")
 
@@ -85,7 +88,7 @@ def array_only():
     s = list(map(int, input("Enter array as space-separated values: ").split(",")))
     print(f"s: {s}")
     sol = Solution()
-    final_result = sol.subsets(s)
+    final_result = sol.subsetsWithDup(s)
         #sol.search(s, t)
     print(f"final_result: {final_result}\n")
 
@@ -118,9 +121,9 @@ if __name__ == '__main__':
     n = int(input("Enter no of test cases: "))
 
     for i in range(n):
-        # array_number()
+        array_number()
         # string_number()
-        array_only()
+        # array_only()
         # string_only()
         # tree_from_List()
 

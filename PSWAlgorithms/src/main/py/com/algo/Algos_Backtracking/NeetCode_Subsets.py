@@ -25,10 +25,32 @@ All the numbers of nums are unique.
                     []                  [2]             [1]               [1,2]
                 []     [3]          [2]   [2,3]     [1]     [1,3]    [1,2]      [1,2,3]
 '''
+from itertools import chain, combinations
+
 class Solution:
     def subsets(self, nums):
 
         final_array = []
+        # def subset_helper_string(curr_array, level, side):
+        #
+        #     nonlocal final_array
+        #     # print(f"{' '*level*2} {curr_array}\t{level}\t{side}\n"
+        #     #       f"{' '*level*2} final_array: {final_array}")
+        #     if level == len(nums):
+        #         new_array = list(map(int, curr_array.split()))
+        #         final_array.append(new_array)
+        #         return
+        #
+        #     # left call
+        #     subset_helper_string(curr_array, level+1, 'L')  # curr_array =
+        #
+        #     # right call
+        #     # build_right = curr_array
+        #     curr_array = curr_array + ' ' + str(nums[level])
+        #     subset_helper_string(curr_array, level+1, 'R')  # curr_array =
+        #
+        #     return
+
         def subset_helper(curr_array, level, side):
 
             nonlocal final_array
@@ -36,20 +58,28 @@ class Solution:
                   f"{' '*level*2} final_array: {final_array}")
             if level == len(nums):
                 final_array.append(curr_array)
-                return # final_array # curr_array[:-1]  #[:-1]   # if side == 'L' else curr_array[:-1]
+                # if len(curr_array) > 0:
+                #     curr_array.pop()
+                # curr_array = curr_array[:-1]
+                return  # final_array # curr_array[:-1]  #[:-1]   # if side == 'L' else curr_array[:-1]
 
             # left call
-            build_left = curr_array
-            subset_helper(build_left, level+1, 'L')  # curr_array =
+            subset_helper(curr_array, level+1, 'L')  # curr_array =
             # print(f"{('-') * level} {level} Left result:  {final_array}")
 
             # right call
-            build_right = curr_array
-            build_right.append(nums[level])
-            subset_helper(build_right, level+1, 'R')  # curr_array =
+            # curr_array.append(nums[level])
+            subset_helper(curr_array + [nums[level]], level+1, 'R') # + [nums[level]]
+            # curr_array.pop()
+            # curr_array = curr_array[:-1]
             # print(f"{('-') * level} {level} Left result:  {final_array}")
 
-            return # final_array # curr_array[:-1]
+            return   # final_array # curr_array[:-1]
 
+        # subset_helper_string("", 0, 'L')
         subset_helper([], 0, 'L')
         return final_array
+
+    def subsets_short(self, nums):
+        s = list(nums)
+        return chain.from_iterable(combinations(s, r) for r in range(len(s) + 1))
