@@ -15,6 +15,103 @@ low < mid -- Increasing in this half
 low > mid -- Increasing and Decreasing in this half
 '''
 
+class Solution:
+    def search(self, nums, target):
+        import math
+
+        # beats 30.90%   # 63.6%
+        def search_helper(low, high):
+            while low <= high:
+                mid = math.floor(high - (high - low) / 2)
+                print(f"low: {low} high: {high} mid: {mid} arr[mid]: {nums[mid]}")
+
+                if nums[mid] == target:
+                    return mid
+
+                # lower half sorted
+                if nums[low] <= nums[mid]:
+                    if target > nums[mid]:
+                        low = mid + 1
+                    elif target >= nums[low]:
+                        high = mid - 1
+                    else:
+                        low = mid + 1
+                elif target < nums[mid]:
+                    high = mid - 1
+                elif target <= nums[high]:
+                    low = mid + 1
+                else:
+                    high = mid - 1
+            return -1
+
+        # beats 45.39%
+        def search_helper_recu(low, high):
+            mid = math.floor(high - ((high - low) / 2))
+
+            if low >= high:
+                return -1
+
+            if target == nums[mid]:
+                return mid
+            else:
+                # Logic 3
+                # if mid > low lower half is sorted
+                # else upper half is sorted
+
+                # check if key is between lower and upper boundary of sorted array if yes then key should be in that
+                # part else in other half
+                if nums[mid] > nums[low]:
+                    # Lower half is sorted - low, mid
+                    if target >= nums[low] and target <= nums[mid]:
+                        return search_helper(low, mid)
+                    else:
+                        return search_helper(mid + 1, high)
+                else:
+                    # upper half is sorted - mid+1, high
+                    if target >= nums[mid] and target <= nums[high - 1]:
+                        return search_helper(mid + 1, high)
+                    else:
+                        return search_helper(low, mid)
+
+        # beats 30.90% -
+        # removing = from < mid or > mid condition and using and target improved performance 87.66%
+        def search_helper_self(low, high):
+
+            while low <= high:
+                mid = math.floor(high - (high-low)/2)
+                print(f"low: {low} high: {high} mid: {mid} arr[mid]: {nums[mid]}")
+
+                if nums[mid] == target:
+                    return mid
+
+                # lower half sorted
+                if nums[low] <= nums[mid]:
+                    if nums[low] <= target and target < nums[mid]:
+                        # search in sorted lower half
+                        high = mid-1
+                    else:
+                        # while mid+1 < high and nums[mid+1] > nums[mid]:
+                        #     mid += 1
+
+                        low = mid+1
+
+                # upper half sorted
+                else:
+                    if nums[mid] < target and target <= nums[high]:
+                        # search in sorted lower half
+                        low = mid + 1
+                    else:
+                        # while mid - 1 >= low and nums[mid - 1] < nums[mid]:
+                        #     mid -= 1
+                        high = mid - 1
+
+            return -1
+
+        # return search_helper(0, len(nums) - 1)
+        # return search_helper_recu(0, len(nums))
+        return search_helper_self(0, len(nums)-1)
+
+
 def search_element(arr1, element):
     return search_element_helper1(arr1, element, 0, len(arr1)-1)
 

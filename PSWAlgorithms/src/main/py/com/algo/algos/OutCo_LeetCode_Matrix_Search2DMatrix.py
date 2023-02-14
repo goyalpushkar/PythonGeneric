@@ -40,11 +40,54 @@ https://leetcode.com/problems/search-a-2d-matrix/
 import math
 
 class Solution:
+    # beats 82.91% - old-beats 57.7%
     def searchMatrix(self, matrix, target):
-
+        import math
         row_len = len(matrix)
         col_len = len(matrix[0])
 
+        # get row
+        def get_row(low, high):
+            while low <= high:
+                mid = math.floor(high - (high - low) / 2)
+
+                # Performance improvement adding other or and and conditions
+                if (target == matrix[mid][0] or matrix[mid][-1] == target) or (target >= matrix[mid][0] and target <= matrix[mid][-1]):
+                    return mid
+
+                if target <= matrix[mid][0]:
+                    low = min(low, mid)
+                    high = mid - 1
+                else:
+                    low = mid + 1
+
+            return low - 1
+
+        # search in the row
+        row = get_row(0, len(matrix) - 1)
+
+        def search_row(low, high):
+            while low <= high:
+                mid = math.floor(high - (high - low) / 2)
+
+                if target == matrix[row][mid]:
+                    return True
+
+                if target <= matrix[row][mid]:
+                    low = min(low, mid)
+                    high = mid - 1
+                else:
+                    low = mid + 1
+
+            return False  # low-1
+
+        return search_row(0, len(matrix[0]) - 1)
+
+    # beats 12.16 %
+    def searchMatrix_old(self, matrix, target):
+        import math
+        row_len = len(matrix)
+        col_len = len(matrix[0])
         min_row, max_row = 0, row_len
 
         def check_value(min_row, max_row):

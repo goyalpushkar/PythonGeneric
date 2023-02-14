@@ -24,6 +24,8 @@ from Algos_Backtracking.NeetCode_Subsets import Solution
 from Algos_Backtracking.NeetCode_Subsets2 import Solution
 from Algos_Backtracking.NeetCode_CombinationSum import Solution
 from Algos_Backtracking.NeetCode_CombinationSum2 import Solution
+from Algos_Search.NeetCode_KokoEatingBananas import Solution
+from Algos_Search.CCI_SearchinRotatedArray import Solution
 
 # Node class for a binary tree node
 class TreeNode:
@@ -67,7 +69,7 @@ def array_number():
     t = int(input("Enter target: "))
     print(f"s: {s} \t t: {t}")
     sol = Solution()
-    final_result = sol.combinationSum2(s, t)
+    final_result = sol.search(s, t)
         #sol.search(s, t)
     print(f"final_result: {final_result}\n")
 
