@@ -32,6 +32,24 @@ class Solution(object):
         :type nums: List[int]
         :rtype: int
         """
+        if len(nums) == 0:
+            return 0
+
+        min_product = nums[0]
+        max_product = nums[0]
+        max_sum = nums[0]
+        for i in range(1, len(nums)):
+            max_product, min_product = max(nums[i], max_product*nums[i], min_product*nums[i]), min(nums[i], max_product*nums[i], min_product*nums[i])
+            max_sum = max(max_sum, max_product)
+
+        return max_sum
+
+
+    def maxProduct_old(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
 
         run_sum = None
         max_sum = nums[0]

@@ -49,7 +49,6 @@ class Solution(object):
 
         return True
 
-
         # Approach 2
         # The idea could be implemented as a recursion. One compares the node value with its upper and lower limits if
         # they are available. Then one repeats the same step recursively for left and right subtrees.
@@ -66,7 +65,7 @@ class Solution(object):
             return bst_validate(curr_node.left, low_val, curr_node.val) and \
                    bst_validate(curr_node.right, curr_node.val, high_val)
 
-            bst_validate(curr_node, -math.inf, math.inf)
+        return bst_validate(root, -math.inf, math.inf)
 
 
 if __name__ == '__main__':

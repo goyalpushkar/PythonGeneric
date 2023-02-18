@@ -26,6 +26,12 @@ from Algos_Backtracking.NeetCode_CombinationSum import Solution
 from Algos_Backtracking.NeetCode_CombinationSum2 import Solution
 from Algos_Search.NeetCode_KokoEatingBananas import Solution
 from Algos_Search.CCI_SearchinRotatedArray import Solution
+from Algos_DP.NeetCode_1D_HouseRobber2 import Solution
+from algos.NeetCode_DP_LongestPalindrome import Solution
+from Algos_Graphs.NeetCode_MaxAreaOfIsland import Solution
+from Algos_Graphs.NeetCode_SurroundedRegions import Solution
+from Algos_Graphs.NeetCode_CourseSchedule import Solution
+from algos.NeetCode_Recursion_WordBreak import Solution
 
 # Node class for a binary tree node
 class TreeNode:
@@ -73,6 +79,45 @@ def array_number():
         #sol.search(s, t)
     print(f"final_result: {final_result}\n")
 
+# 2D Matrix test case
+def matrix_2d():
+
+    final_matrix = [["X","O","X"],["O","X","O"],["X","O","X"]]
+        # [["O","X","X","O","X"],["X","O","O","X","O"],["X","O","X","O","X"],["O","X","O","O","O"],["X","X","O","X","O"]]
+        # [["X","X","X","X"],["X","O","O","X"],["X","X","O","X"],["X","O","X","X"]]
+        # [["O","O","O","O","X","X"],["O","O","O","O","O","O"],["O","X","O","X","O","O"],["O","X","O","O","X","O"],["O","X","O","X","O","O"],["O","X","O","O","O","O"]]
+    # rows = int(input("Enter no of rows: "))
+    # for row in range(rows):
+    #     cols = list(map(int, input("Enter cols as comma-separated values: ").split(",")))
+    #     final_matrix.append(cols)
+
+    # final_matrix = input("Enter grid: ")
+    print(f"final_matrix: {final_matrix} ")
+    sol = Solution()
+    final_result = sol.solve(final_matrix)
+        #sol.search(s, t)
+    print(f"final_result: {final_result}\n")
+
+# 2D Matrix and number test case
+def matrix_2d_number():
+
+    numOfCourses = int(input("Enter number of courses: "))
+    final_matrix = [[1,4],[2,4],[3,1],[3,2]]
+        # [["X","O","X"],["O","X","O"],["X","O","X"]]
+        # [["O","X","X","O","X"],["X","O","O","X","O"],["X","O","X","O","X"],["O","X","O","O","O"],["X","X","O","X","O"]]
+        # [["X","X","X","X"],["X","O","O","X"],["X","X","O","X"],["X","O","X","X"]]
+        # [["O","O","O","O","X","X"],["O","O","O","O","O","O"],["O","X","O","X","O","O"],["O","X","O","O","X","O"],["O","X","O","X","O","O"],["O","X","O","O","O","O"]]
+    # rows = int(input("Enter no of rows: "))
+    # for row in range(rows):
+    #     cols = list(map(int, input("Enter cols as comma-separated values: ").split(",")))
+    #     final_matrix.append(cols)
+
+    # final_matrix = input("Enter grid: ")
+    print(f"final_matrix: {final_matrix} ")
+    sol = Solution()
+    final_result = sol.canFinish(numOfCourses, final_matrix)
+        #sol.search(s, t)
+    print(f"final_result: {final_result}\n")
 
 # String and number test case
 def string_number():
@@ -85,12 +130,22 @@ def string_number():
     print(f"final_result: {final_result}\n")
 
 
+# String and number test case
+def string_dict():
+    s = input("Enter string: ")
+    t = list(input("Enter comma-separated list of words: ").split(","))
+    print(f"s: {s} \t t: {t}")
+    sol = Solution()
+    final_result = sol.wordBreak_trie(s, t)
+        #sol.search(s, t)
+    print(f"final_result: {final_result}\n")
+
 # Array only test case
 def array_only():
     s = list(map(int, input("Enter array as space-separated values: ").split(",")))
     print(f"s: {s}")
     sol = Solution()
-    final_result = sol.subsetsWithDup(s)
+    final_result = sol.rob(s)
         #sol.search(s, t)
     print(f"final_result: {final_result}\n")
 
@@ -100,7 +155,7 @@ def string_only():
     s = input("Enter string value: ")
     print(f"s: {s}")
     sol = Solution()
-    final_result = sol.reverseShuffleMerge(s)
+    final_result = sol.longestPalindrome(s)
         #sol.search(s, t)
     print(f"final_result: {final_result}\n")
 
@@ -123,8 +178,11 @@ if __name__ == '__main__':
     n = int(input("Enter no of test cases: "))
 
     for i in range(n):
-        array_number()
+        # matrix_2d_number()
+        # matrix_2d()
+        # array_number()
         # string_number()
+        string_dict()
         # array_only()
         # string_only()
         # tree_from_List()
