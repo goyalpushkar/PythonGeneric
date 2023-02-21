@@ -32,6 +32,7 @@ from Algos_Graphs.NeetCode_MaxAreaOfIsland import Solution
 from Algos_Graphs.NeetCode_SurroundedRegions import Solution
 from Algos_Graphs.NeetCode_CourseSchedule import Solution
 from algos.NeetCode_Recursion_WordBreak import Solution
+from Algos_StacksAndQueues.NeetCode_GenerateParantheses import Solution
 
 # Node class for a binary tree node
 class TreeNode:
@@ -159,6 +160,14 @@ def string_only():
         #sol.search(s, t)
     print(f"final_result: {final_result}\n")
 
+# number only test case
+def number_only():
+    s = int(input("Enter number value: "))
+    print(f"s: {s}")
+    sol = Solution()
+    final_result = sol.generateParenthesis(s)
+        #sol.search(s, t)
+    print(f"final_result: {final_result}\n")
 
 def tree_from_List():
     compressed_tree = input("Enter List as comma-separated values: ").split(",")
@@ -182,8 +191,8 @@ if __name__ == '__main__':
         # matrix_2d()
         # array_number()
         # string_number()
-        string_dict()
+        # string_dict()
         # array_only()
         # string_only()
         # tree_from_List()
-
+        number_only()
