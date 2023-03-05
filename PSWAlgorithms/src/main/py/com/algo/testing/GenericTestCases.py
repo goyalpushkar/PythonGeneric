@@ -33,7 +33,8 @@ from Algos_Graphs.NeetCode_SurroundedRegions import Solution
 from Algos_Graphs.NeetCode_CourseSchedule import Solution
 from algos.NeetCode_Recursion_WordBreak import Solution
 from Algos_StacksAndQueues.NeetCode_GenerateParantheses import Solution
-
+from Algos_SlidingWindow.NeetCode_LongestRepCharReplacement import Solution
+from Algos_GreedyAlgorithms.NeetCode_JumpGame import Solution
 # Node class for a binary tree node
 class TreeNode:
     def __init__(self, value=None):
@@ -126,7 +127,7 @@ def string_number():
     t = int(input("Enter number: "))
     print(f"s: {s} \t t: {t}")
     sol = Solution()
-    final_result = sol.substrCount(t, s)
+    final_result = sol.characterReplacement(t, s)
         #sol.search(s, t)
     print(f"final_result: {final_result}\n")
 
@@ -146,7 +147,7 @@ def array_only():
     s = list(map(int, input("Enter array as space-separated values: ").split(",")))
     print(f"s: {s}")
     sol = Solution()
-    final_result = sol.rob(s)
+    final_result = sol.canJump(s)
         #sol.search(s, t)
     print(f"final_result: {final_result}\n")
 
@@ -192,7 +193,7 @@ if __name__ == '__main__':
         # array_number()
         # string_number()
         # string_dict()
-        # array_only()
+        array_only()
         # string_only()
         # tree_from_List()
-        number_only()
+        # number_only()
