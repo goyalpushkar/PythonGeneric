@@ -35,6 +35,8 @@ from algos.NeetCode_Recursion_WordBreak import Solution
 from Algos_StacksAndQueues.NeetCode_GenerateParantheses import Solution
 from Algos_SlidingWindow.NeetCode_LongestRepCharReplacement import Solution
 from Algos_GreedyAlgorithms.NeetCode_JumpGame import Solution
+from Algos_GreedyAlgorithms.NeetCode_GasStation import Solution
+
 # Node class for a binary tree node
 class TreeNode:
     def __init__(self, value=None):
@@ -80,6 +82,18 @@ def array_number():
     final_result = sol.search(s, t)
         #sol.search(s, t)
     print(f"final_result: {final_result}\n")
+
+# Array and array test case
+def array_array():
+    s = list(map(int, input("Enter array as comma-separated values: ").split(",")))
+    t = list(map(int, input("Enter array as comma-separated values: ").split(",")))
+    print(f"s: {s} \t t: {t}")
+    sol = Solution()
+    final_result = sol.canCompleteCircuit(s, t)
+        #sol.search(s, t)
+    print(f"final_result: {final_result}\n")
+
+
 
 # 2D Matrix test case
 def matrix_2d():
@@ -193,7 +207,8 @@ if __name__ == '__main__':
         # array_number()
         # string_number()
         # string_dict()
-        array_only()
+        # array_only()
+        array_array()
         # string_only()
         # tree_from_List()
         # number_only()
