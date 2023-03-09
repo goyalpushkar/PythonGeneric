@@ -34,5 +34,27 @@ Each node's value is between [-10^4, 10^4].
 #         self.val = val
 #         self.left = left
 #         self.right = right
+import math
 class Solution:
+
+    # Beats 79.90% 248 ms
     def goodNodes(self, root):
+        def dfs_helper(curr_node, max_so_far, count):
+
+            if curr_node.val >= max_so_far:
+                count += 1
+                # return count
+
+            max_so_far = max(max_so_far, curr_node.val)
+
+            if curr_node.left is not None:
+                count = dfs_helper(curr_node.left, max_so_far, count)
+
+            if curr_node.right is not None:
+                count = dfs_helper(curr_node.right, max_so_far, count)
+
+            return count
+
+        final_count = dfs_helper(root, -math.inf, 0)
+
+        return final_count

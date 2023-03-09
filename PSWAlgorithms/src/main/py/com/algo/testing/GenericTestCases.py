@@ -36,6 +36,8 @@ from Algos_StacksAndQueues.NeetCode_GenerateParantheses import Solution
 from Algos_SlidingWindow.NeetCode_LongestRepCharReplacement import Solution
 from Algos_GreedyAlgorithms.NeetCode_JumpGame import Solution
 from Algos_GreedyAlgorithms.NeetCode_GasStation import Solution
+from Algos_HeapPriorityQueue.NeetCode_KClosesPointsToOrigin import Solution
+from Algos_HeapPriorityQueue.NeetCode_TaskScheduler import Solution
 
 # Node class for a binary tree node
 class TreeNode:
@@ -75,11 +77,16 @@ def two_strings():
 
 # Array and number test case
 def array_number():
-    s = list(map(int, input("Enter array as comma-separated values: ").split(",")))
+    array_type = input("Enter 1 for int values or 2 for String values: ")
+    if array_type == "1":
+        s = list(map(int, input("Enter array as comma-separated values: ").split(",")))
+    else:
+        s = list(input("Enter array as comma-separated values: ").split(","))
+
     t = int(input("Enter target: "))
     print(f"s: {s} \t t: {t}")
     sol = Solution()
-    final_result = sol.search(s, t)
+    final_result = sol.leastInterval(s, t)
         #sol.search(s, t)
     print(f"final_result: {final_result}\n")
 
@@ -118,7 +125,7 @@ def matrix_2d():
 def matrix_2d_number():
 
     numOfCourses = int(input("Enter number of courses: "))
-    final_matrix = [[1,4],[2,4],[3,1],[3,2]]
+    final_matrix = [[0,1],[1,0]]
         # [["X","O","X"],["O","X","O"],["X","O","X"]]
         # [["O","X","X","O","X"],["X","O","O","X","O"],["X","O","X","O","X"],["O","X","O","O","O"],["X","X","O","X","O"]]
         # [["X","X","X","X"],["X","O","O","X"],["X","X","O","X"],["X","O","X","X"]]
@@ -131,7 +138,7 @@ def matrix_2d_number():
     # final_matrix = input("Enter grid: ")
     print(f"final_matrix: {final_matrix} ")
     sol = Solution()
-    final_result = sol.canFinish(numOfCourses, final_matrix)
+    final_result = sol.kClosest(final_matrix, numOfCourses)
         #sol.search(s, t)
     print(f"final_result: {final_result}\n")
 
@@ -202,13 +209,35 @@ if __name__ == '__main__':
     n = int(input("Enter no of test cases: "))
 
     for i in range(n):
-        # matrix_2d_number()
-        # matrix_2d()
-        # array_number()
-        # string_number()
-        # string_dict()
-        # array_only()
-        array_array()
-        # string_only()
-        # tree_from_List()
-        # number_only()
+        test_type = input("Enter Test Type: \n"
+                          "1. STR_ONLY: string_only\n"
+                          "2. NUM_ONLY: number_only\n"
+                          "3. ARR_ONLY: array_only\n"
+                          "4. MAT_2D: matrix_2d \n"
+                          "5. MAT_NUM: matrix_2d_number\n"
+                          "6. ARR_NUM: array_number\n"
+                          "7. STR_NUM: string_number\n"
+                          "8. STR_DICT: string_dict\n"
+                          "9. ARR_ARR: array_array\n"
+                          "10. TREE_FRM_LST: tree_from_List\n"
+                          "")
+        if test_type == "STR_ONLY" or int(test_type) == 1:
+            string_only()
+        elif test_type == "NUM_ONLY" or int(test_type) == 2:
+            number_only()
+        elif test_type == "ARR_ONLY" or int(test_type) == 3:
+            array_only()
+        elif test_type == "MAT_2D" or int(test_type) == 4:
+            matrix_2d()
+        elif test_type == "MAT_NUM" or int(test_type) == 5:
+            matrix_2d_number()
+        elif test_type == "ARR_NUM" or int(test_type) == 6:
+            array_number()
+        elif test_type == "STR_NUM" or int(test_type) == 7:
+            string_number()
+        elif test_type == "STR_DICT" or int(test_type) == 8:
+            string_dict()
+        elif test_type == "ARR_ARR" or int(test_type) == 9:
+            array_array()
+        elif test_type == "TREE_FRM_LST" or int(test_type) == 10:
+            tree_from_List()
