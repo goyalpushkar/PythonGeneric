@@ -77,7 +77,7 @@ class Solution:
         return count_time
 
     # Mathematical Way - 425ms
-    def leastInterval(self, tasks: List[str], n: int) -> int:
+    def leastInterval(self, tasks, n):
         # frequencies of the tasks
         frequencies = [0] * 26
         for t in tasks:
@@ -96,7 +96,7 @@ class Solution:
         return idle_time + len(tasks)
 
     # Mathematical Way - 406 ms
-    def leastInterval(self, tasks: List[str], n: int) -> int:
+    def leastInterval(self, tasks, n) -> int:
         freqs = Counter(tasks)
         max_freq = max(freqs.values())
         count = 0

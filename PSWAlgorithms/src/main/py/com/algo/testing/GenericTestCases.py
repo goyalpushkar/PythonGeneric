@@ -38,6 +38,9 @@ from Algos_GreedyAlgorithms.NeetCode_JumpGame import Solution
 from Algos_GreedyAlgorithms.NeetCode_GasStation import Solution
 from Algos_HeapPriorityQueue.NeetCode_KClosesPointsToOrigin import Solution
 from Algos_HeapPriorityQueue.NeetCode_TaskScheduler import Solution
+from Algos_BitManipulation.NeetCode_SingleNumber import Solution
+from Algos_MathGeometry.NeetCode_HappyNumber import Solution
+from Algos_TwoPointers.NeetCode_3Sum import Solution
 
 # Node class for a binary tree node
 class TreeNode:
@@ -165,10 +168,15 @@ def string_dict():
 
 # Array only test case
 def array_only():
-    s = list(map(int, input("Enter array as space-separated values: ").split(",")))
+    array_type = input("Enter 1 for int values or 2 for String values: ")
+    if array_type == "1":
+        s = list(map(int, input("Enter array as comma-separated values: ").split(",")))
+    else:
+        s = list(input("Enter array as comma-separated values: ").split(","))
+
     print(f"s: {s}")
     sol = Solution()
-    final_result = sol.canJump(s)
+    final_result = sol.threeSum(s)
         #sol.search(s, t)
     print(f"final_result: {final_result}\n")
 
@@ -187,7 +195,7 @@ def number_only():
     s = int(input("Enter number value: "))
     print(f"s: {s}")
     sol = Solution()
-    final_result = sol.generateParenthesis(s)
+    final_result = sol.isHappy(s)
         #sol.search(s, t)
     print(f"final_result: {final_result}\n")
 
