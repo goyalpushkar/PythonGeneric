@@ -11,6 +11,42 @@ class Height:
         self.height = 0
 
 class Solution:
+    import math
+    # Beats 51.4% 49ms
+    def diameterOfBinaryTree(self, root):
+        
+        def height(node):
+            if node is None:
+                return 0
+
+            lh = height(node.left)
+            rh = height(node.right)
+
+            self.max_len = max(self.max_len, lh+rh)
+
+            return max(lh, rh) + 1
+
+        self.max_len = 0
+        height(root)
+        return self.max_len
+
+    # Beats 68.91% 46ms
+    def diameterOfBinaryTree(self, root):
+        import math
+        def height(node, max_dia):
+            if node is None:
+                return (0, max_dia)
+
+            lh = height(node.left, max_dia)
+            rh = height(node.right, max_dia)
+
+            ht = max(lh[0], rh[0]) + 1
+            max_dia = max(lh[0] + rh[0], lh[1], rh[1])
+
+            return (ht, max_dia)
+
+        return height(root, -math.inf)[1]
+
     def diameterOfBinaryTree(self, root):
         import math
 
@@ -20,8 +56,8 @@ class Solution:
 
             left_height = diameter_helper(root.left, max_height, height + 1)
             right_height = diameter_helper(root.right, max_height, height + 1)
-            print(f"{' '*height} {root.value} left_height: {left_height}")
-            print(f"{' '*height} {root.value} right_height: {right_height}")
+            # print(f"{' '*height} {root.value} left_height: {left_height}")
+            # print(f"{' '*height} {root.value} right_height: {right_height}")
             max_height = max(left_height[0], right_height[0], left_height[1] + right_height[1])
 
             return (max_height, max(left_height[1], right_height[1])+1)

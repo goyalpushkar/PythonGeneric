@@ -41,6 +41,7 @@ from Algos_HeapPriorityQueue.NeetCode_TaskScheduler import Solution
 from Algos_BitManipulation.NeetCode_SingleNumber import Solution
 from Algos_MathGeometry.NeetCode_HappyNumber import Solution
 from Algos_TwoPointers.NeetCode_3Sum import Solution
+from Algos_StacksAndQueues.NeetCode_ValidParantheses import Solution
 
 # Node class for a binary tree node
 class TreeNode:
@@ -186,7 +187,7 @@ def string_only():
     s = input("Enter string value: ")
     print(f"s: {s}")
     sol = Solution()
-    final_result = sol.longestPalindrome(s)
+    final_result = sol.isValid(s)
         #sol.search(s, t)
     print(f"final_result: {final_result}\n")
 

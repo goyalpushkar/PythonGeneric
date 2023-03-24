@@ -70,7 +70,7 @@ class Solution:
             if target == 0:
                 # cache[key] = curr_path
                 final_path.append(curr_path)
-                return  curr_path[:-1] # ways
+                return curr_path[:-1] # ways
 
             if len(candidates) == 0 or target < 0 or curr_path is None:
                 return curr_path[:-1] # 0
