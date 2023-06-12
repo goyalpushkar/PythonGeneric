@@ -93,6 +93,43 @@ def diameter(root):
     height = Height()
     return diameterOpt(root, height)
 
+# IK - Interview Kickstart
+def binary_tree_diameter(root):
+    """
+    Args:
+     root(BinaryTreeNode_int32)
+    Returns:
+     int32
+    """
+    # Write your code here.
+    max_dia = 0
+
+    if root is None:
+        return max_dia
+
+    def helper(node):
+        nonlocal max_dia
+        if node.left is None and node.right is None:
+            return 1
+
+        left_height = 0
+        if node.left:
+            left_height = helper(node.left)
+
+        right_height = 0
+        if node.right:
+            right_height = helper(node.right)
+
+        # diameter for current node
+        dia = left_height + right_height
+        # max(left_height, right_height) + min(left_height, right_height)
+        max_dia = max(max_dia, dia)
+
+        return max(left_height, right_height) + 1
+
+    helper(root)
+    return max_dia
+
 if __name__ == "__main__":
     print("Build Tree")
     # Driver Code

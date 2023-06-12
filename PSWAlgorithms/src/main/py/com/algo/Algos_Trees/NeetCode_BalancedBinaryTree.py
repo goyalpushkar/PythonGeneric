@@ -1,48 +1,89 @@
 '''
-Given a binary tree, determine if it is height-balanced
-A height-balanced binary tree is a binary tree in which the depth of the two subtrees of every node never
- differs by more than one.
+Given an m x n 2D binary grid grid which represents a map of '1's (land) and '0's (water), return the number of islands.
+
+An island is surrounded by water and is formed by connecting adjacent lands horizontally or vertically. You may
+assume all four edges of the grid are all surrounded by water.
 
 
 Example 1:
-Input: root = [3,9,20,null,null,15,7]
-Output: true
+Input: grid = [
+  ["1","1","1","1","0"],
+  ["1","1","0","1","0"],
+  ["1","1","0","0","0"],
+  ["0","0","0","0","0"]
+]
+Output: 1
 
 Example 2:
-Input: root = [1,2,2,3,3,null,null,4,4]
-Output: false
-
-Example 3:
-Input: root = []
-Output: true
+Input: grid = [
+  ["1","1","0","0","0"],
+  ["1","1","0","0","0"],
+  ["0","0","1","0","0"],
+  ["0","0","0","1","1"]
+]
+Output: 3
 
 Constraints:
-The number of nodes in the tree is in the range [0, 5000].
--104 <= Node.val <= 104
+m == grid.length
+n == grid[i].length
+1 <= m, n <= 300
+grid[i][j] is '0' or '1'.
 '''
-# Definition for a binary tree node.
-# class TreeNode:
-#     def __init__(self, val=0, left=None, right=None):
-#         self.val = val
-#         self.left = left
-#         self.right = right
 class Solution:
 
-    # Beats 61.25% 54 ms
-    def isBalanced(self, root):
-        self.balanced = True
-        def height(node):
-            if not node:
-                return 0
+        '''
+               [["1","1","1"],
+                ["0","1","0"],
+                ["1","1","1"]]
+        '''
+        # Beats 93.81% 270ms
+        def numIslands(self, grid):
+            self.m = len(grid)
+            self.n = len(grid[0])
 
-            lh = height(node.left)
-            rh = height(node.right)
+            def dfs(r, c):
+                # print(r, c)
 
-            if abs(lh - rh) > 1:
-                self.balanced = False
+                if r < 0 or r >= self.m or c < 0 or c >= self.n:
+                    return
 
-            return max(lh, rh) + 1
+                    # if it is water
+                if grid[r][c] == "0":
+                    return
 
-        height(root)
-        return self.balanced
+                # down
+                if r + 1 < self.m:
+                    if grid[r + 1][c] == "1":
+                        grid[r + 1][c] = "V"
+                        dfs(r + 1, c)
 
+                # left
+                if c + 1 < self.n:
+                    if grid[r][c + 1] == "1":
+                        grid[r][c + 1] = "V"
+                        dfs(r, c + 1)
+
+                # up
+                if r - 1 >= 0:
+                    if grid[r - 1][c] == "1":
+                        grid[r - 1][c] = "V"
+                        dfs(r - 1, c)
+
+                # right
+                if c - 1 >= 0:
+                    if grid[r][c - 1] == "1":
+                        grid[r][c - 1] = "V"
+                        dfs(r, c - 1)
+
+                return
+
+            total_count = 0
+            for r in range(self.m):
+                for c in range(self.n):
+                    if grid[r][c] == "1":
+                        grid[r][c] = "V"
+                        dfs(r, c)
+                        total_count += 1
+                        # print(r, c, total_count, "\n")
+
+            return total_count

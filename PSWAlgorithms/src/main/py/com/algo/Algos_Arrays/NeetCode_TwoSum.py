@@ -42,7 +42,7 @@ class Solution:
         return []
 
 
-    # 1 Pass
+    # 1 Pass - Time O(N) and Space O(N)
     def twoSum_1Pass(self, nums, target):
         table = {}
         for i in range(len(nums)):
@@ -51,3 +51,22 @@ class Solution:
                 solution = [table[numToFind], i]
                 return solution
             table[nums[i]] = i
+
+
+    # Time - O(N log N) Space - O(1)
+    # N log N for sorting and N is to search sum after sorting but overall N log N
+    def twoSum_Space(self, nums, target):
+        nums = sorted(nums)
+        left_pointer = 0
+        right_pointer = len(nums)-1
+
+        while left_pointer < right_pointer:
+            sum = nums[left_pointer] + nums[right_pointer]
+            if sum > target:
+                right_pointer -= 1
+            elif sum < target:
+                left_pointer += 1
+            else:
+                return [left_pointer, right_pointer]
+
+        return []

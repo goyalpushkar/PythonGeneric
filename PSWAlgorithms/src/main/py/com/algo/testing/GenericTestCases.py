@@ -42,6 +42,10 @@ from Algos_BitManipulation.NeetCode_SingleNumber import Solution
 from Algos_MathGeometry.NeetCode_HappyNumber import Solution
 from Algos_TwoPointers.NeetCode_3Sum import Solution
 from Algos_StacksAndQueues.NeetCode_ValidParantheses import Solution
+from Algos_Sorting.InterviewCake_MergeSortedArrays import Solution
+from Algos_Sorting.IK_SegregateEvenAndOddNum import Solution
+from Algos_Sorting.IK_4Sum import Solution
+from Algos_Recurssion.IK_TimedTest_PossibleToTargetSum import Solution
 
 # Node class for a binary tree node
 class TreeNode:
@@ -78,6 +82,24 @@ def two_strings():
     final_result = sol.getHint(s, t)
     print(f"final_result: {final_result}\n")
 
+# 2 Strings test case
+def two_lists():
+    array_type = input("Enter 1 for int values or 2 for String values: ")
+    if array_type == "1":
+        s = list(map(int, input("Enter array as comma-separated values: ").split(",")))
+    else:
+        s = list(input("Enter array as comma-separated values: ").split(","))
+
+    array_type = input("Enter 1 for int values or 2 for String values: ")
+    if array_type == "1":
+        t = list(map(int, input("Enter array as comma-separated values: ").split(",")))
+    else:
+        t = list(input("Enter array as comma-separated values: ").split(","))
+
+    sol = Solution()
+    final_result = sol.merge_sorted_array(s, t)
+    print(f"final_result: {final_result}\n")
+
 
 # Array and number test case
 def array_number():
@@ -90,7 +112,7 @@ def array_number():
     t = int(input("Enter target: "))
     print(f"s: {s} \t t: {t}")
     sol = Solution()
-    final_result = sol.leastInterval(s, t)
+    final_result = sol.check_if_sum_possible(s, t)
         #sol.search(s, t)
     print(f"final_result: {final_result}\n")
 
@@ -177,7 +199,7 @@ def array_only():
 
     print(f"s: {s}")
     sol = Solution()
-    final_result = sol.threeSum(s)
+    final_result = sol.segregate_evens_and_odds(s)
         #sol.search(s, t)
     print(f"final_result: {final_result}\n")
 
@@ -229,6 +251,8 @@ if __name__ == '__main__':
                           "8. STR_DICT: string_dict\n"
                           "9. ARR_ARR: array_array\n"
                           "10. TREE_FRM_LST: tree_from_List\n"
+                          "11. 2_STRINGS: 2_strings\n"
+                          "12. 2_LISTS: 2_LISTS\n"
                           "")
         if test_type == "STR_ONLY" or int(test_type) == 1:
             string_only()
@@ -250,3 +274,7 @@ if __name__ == '__main__':
             array_array()
         elif test_type == "TREE_FRM_LST" or int(test_type) == 10:
             tree_from_List()
+        elif test_type == "2_STRINGS" or int(test_type) == 11:
+            two_strings()
+        elif test_type == "2_LISTS" or int(test_type) == 12:
+            two_lists()
