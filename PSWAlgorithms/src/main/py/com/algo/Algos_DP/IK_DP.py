@@ -175,8 +175,6 @@ Return the answer modulo 109 + 7.
 Constraints:
 1 <= n, m <= 103
 '''
-
-
 def unique_paths(n, m):
     """
     Args:
