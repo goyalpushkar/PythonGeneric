@@ -77,5 +77,3 @@ class Solution:
         #     print("right", right.val)
 
         return self.merge(self.sortL(left), self.sortL(right))
-
-
