@@ -30,8 +30,6 @@ Constraints:
 0 <= sum(nums[i]) <= 1000
 -1000 <= target <= 1000
 '''
-
-
 class Solution:
     # Beats 25.55% 391 ms
     def findTargetSumWays(self, nums, target):
@@ -70,12 +68,11 @@ class Solution:
             - it2: [2, 0, 0, -2] -> [2:1, 0:2, -2:1]
             - it3: [3:1, 1:1, 1:2, -1:2, -1:1, -3:1] -> [3:1, 1:3, -1:3, -3:1]
             - it4: [4, 2, 2:2, 0:2, 0:2, -2:2, -2, -4] -> [4:1, 2:3, 0:4, -2:3, -4:1]
-
+    
         - In each iteration, get a dictionary of numbers that can be reached 
             by all the numbers so far, and the number of ways to reach that number.
-
+    
     '''
-
     def findTargetSumWays(self, nums, target):
         d = {0: 1}
 
@@ -85,5 +82,4 @@ class Solution:
                 d_cur[k + n] = v + d_cur.get(k + n, 0)
                 d_cur[k - n] = v + d_cur.get(k - n, 0)
             d = d_cur
-
         return d.get(target, 0)
