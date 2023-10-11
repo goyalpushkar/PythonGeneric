@@ -43,3 +43,21 @@ class Solution:
             traverse_node = temp
 
         return prev
+
+    def reverseList(self, head: Optional[ListNode]) -> Optional[ListNode]:
+        sentinel_node = ListNode()
+
+        def recursive_call(curr_node):
+            if curr_node is None:
+                return sentinel_node
+
+            my_node = curr_node
+            send_node = my_node.next
+            my_node.next = None
+            return_node = recursive_call(send_node)
+            return_node.next = my_node
+
+            return return_node.next
+
+        recursive_call(head)
+        return sentinel_node.next

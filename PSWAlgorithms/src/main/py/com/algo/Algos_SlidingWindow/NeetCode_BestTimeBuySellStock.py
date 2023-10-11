@@ -55,9 +55,6 @@ class Solution:
         max_profit = max(max_profit, profit)
 
 
-
-
-
     # Time limit exceeded
     def maxProfit_TLE(self, prices):
         max_profit = 0

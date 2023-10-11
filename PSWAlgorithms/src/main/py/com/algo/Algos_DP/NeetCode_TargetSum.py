@@ -82,5 +82,4 @@ class Solution:
                 d_cur[k + n] = v + d_cur.get(k + n, 0)
                 d_cur[k - n] = v + d_cur.get(k - n, 0)
             d = d_cur
-
         return d.get(target, 0)

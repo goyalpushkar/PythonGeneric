@@ -83,3 +83,9 @@ class Solution:
     def subsets_short(self, nums):
         s = list(nums)
         return chain.from_iterable(combinations(s, r) for r in range(len(s) + 1))
+
+    def subsets_anotherone(self, nums):
+        subset = [[]]
+        for i in nums:
+            subset += [j + [i] for j in subset]
+        return subset

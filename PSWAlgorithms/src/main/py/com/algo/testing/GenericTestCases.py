@@ -35,6 +35,18 @@ from algos.NeetCode_Recursion_WordBreak import Solution
 from Algos_StacksAndQueues.NeetCode_GenerateParantheses import Solution
 from Algos_SlidingWindow.NeetCode_LongestRepCharReplacement import Solution
 from Algos_GreedyAlgorithms.NeetCode_JumpGame import Solution
+from Algos_GreedyAlgorithms.NeetCode_GasStation import Solution
+from Algos_HeapPriorityQueue.NeetCode_KClosesPointsToOrigin import Solution
+from Algos_HeapPriorityQueue.NeetCode_TaskScheduler import Solution
+from Algos_BitManipulation.NeetCode_SingleNumber import Solution
+from Algos_MathGeometry.NeetCode_HappyNumber import Solution
+from Algos_TwoPointers.NeetCode_3Sum import Solution
+from Algos_StacksAndQueues.NeetCode_ValidParantheses import Solution
+from Algos_Sorting.InterviewCake_MergeSortedArrays import Solution
+from Algos_Sorting.IK_SegregateEvenAndOddNum import Solution
+from Algos_Sorting.IK_4Sum import Solution
+from Algos_Recurssion.IK_TimedTest_PossibleToTargetSum import Solution
+
 # Node class for a binary tree node
 class TreeNode:
     def __init__(self, value=None):
@@ -70,16 +82,51 @@ def two_strings():
     final_result = sol.getHint(s, t)
     print(f"final_result: {final_result}\n")
 
+# 2 Strings test case
+def two_lists():
+    array_type = input("Enter 1 for int values or 2 for String values: ")
+    if array_type == "1":
+        s = list(map(int, input("Enter array as comma-separated values: ").split(",")))
+    else:
+        s = list(input("Enter array as comma-separated values: ").split(","))
+
+    array_type = input("Enter 1 for int values or 2 for String values: ")
+    if array_type == "1":
+        t = list(map(int, input("Enter array as comma-separated values: ").split(",")))
+    else:
+        t = list(input("Enter array as comma-separated values: ").split(","))
+
+    sol = Solution()
+    final_result = sol.merge_sorted_array(s, t)
+    print(f"final_result: {final_result}\n")
+
 
 # Array and number test case
 def array_number():
-    s = list(map(int, input("Enter array as comma-separated values: ").split(",")))
+    array_type = input("Enter 1 for int values or 2 for String values: ")
+    if array_type == "1":
+        s = list(map(int, input("Enter array as comma-separated values: ").split(",")))
+    else:
+        s = list(input("Enter array as comma-separated values: ").split(","))
+
     t = int(input("Enter target: "))
     print(f"s: {s} \t t: {t}")
     sol = Solution()
-    final_result = sol.search(s, t)
+    final_result = sol.check_if_sum_possible(s, t)
         #sol.search(s, t)
     print(f"final_result: {final_result}\n")
+
+# Array and array test case
+def array_array():
+    s = list(map(int, input("Enter array as comma-separated values: ").split(",")))
+    t = list(map(int, input("Enter array as comma-separated values: ").split(",")))
+    print(f"s: {s} \t t: {t}")
+    sol = Solution()
+    final_result = sol.canCompleteCircuit(s, t)
+        #sol.search(s, t)
+    print(f"final_result: {final_result}\n")
+
+
 
 # 2D Matrix test case
 def matrix_2d():
@@ -104,7 +151,7 @@ def matrix_2d():
 def matrix_2d_number():
 
     numOfCourses = int(input("Enter number of courses: "))
-    final_matrix = [[1,4],[2,4],[3,1],[3,2]]
+    final_matrix = [[0,1],[1,0]]
         # [["X","O","X"],["O","X","O"],["X","O","X"]]
         # [["O","X","X","O","X"],["X","O","O","X","O"],["X","O","X","O","X"],["O","X","O","O","O"],["X","X","O","X","O"]]
         # [["X","X","X","X"],["X","O","O","X"],["X","X","O","X"],["X","O","X","X"]]
@@ -117,7 +164,7 @@ def matrix_2d_number():
     # final_matrix = input("Enter grid: ")
     print(f"final_matrix: {final_matrix} ")
     sol = Solution()
-    final_result = sol.canFinish(numOfCourses, final_matrix)
+    final_result = sol.kClosest(final_matrix, numOfCourses)
         #sol.search(s, t)
     print(f"final_result: {final_result}\n")
 
@@ -144,10 +191,15 @@ def string_dict():
 
 # Array only test case
 def array_only():
-    s = list(map(int, input("Enter array as space-separated values: ").split(",")))
+    array_type = input("Enter 1 for int values or 2 for String values: ")
+    if array_type == "1":
+        s = list(map(int, input("Enter array as comma-separated values: ").split(",")))
+    else:
+        s = list(input("Enter array as comma-separated values: ").split(","))
+
     print(f"s: {s}")
     sol = Solution()
-    final_result = sol.canJump(s)
+    final_result = sol.segregate_evens_and_odds(s)
         #sol.search(s, t)
     print(f"final_result: {final_result}\n")
 
@@ -157,7 +209,7 @@ def string_only():
     s = input("Enter string value: ")
     print(f"s: {s}")
     sol = Solution()
-    final_result = sol.longestPalindrome(s)
+    final_result = sol.isValid(s)
         #sol.search(s, t)
     print(f"final_result: {final_result}\n")
 
@@ -166,7 +218,7 @@ def number_only():
     s = int(input("Enter number value: "))
     print(f"s: {s}")
     sol = Solution()
-    final_result = sol.generateParenthesis(s)
+    final_result = sol.isHappy(s)
         #sol.search(s, t)
     print(f"final_result: {final_result}\n")
 
@@ -188,12 +240,41 @@ if __name__ == '__main__':
     n = int(input("Enter no of test cases: "))
 
     for i in range(n):
-        # matrix_2d_number()
-        # matrix_2d()
-        # array_number()
-        # string_number()
-        # string_dict()
-        array_only()
-        # string_only()
-        # tree_from_List()
-        # number_only()
+        test_type = input("Enter Test Type: \n"
+                          "1. STR_ONLY: string_only\n"
+                          "2. NUM_ONLY: number_only\n"
+                          "3. ARR_ONLY: array_only\n"
+                          "4. MAT_2D: matrix_2d \n"
+                          "5. MAT_NUM: matrix_2d_number\n"
+                          "6. ARR_NUM: array_number\n"
+                          "7. STR_NUM: string_number\n"
+                          "8. STR_DICT: string_dict\n"
+                          "9. ARR_ARR: array_array\n"
+                          "10. TREE_FRM_LST: tree_from_List\n"
+                          "11. 2_STRINGS: 2_strings\n"
+                          "12. 2_LISTS: 2_LISTS\n"
+                          "")
+        if test_type == "STR_ONLY" or int(test_type) == 1:
+            string_only()
+        elif test_type == "NUM_ONLY" or int(test_type) == 2:
+            number_only()
+        elif test_type == "ARR_ONLY" or int(test_type) == 3:
+            array_only()
+        elif test_type == "MAT_2D" or int(test_type) == 4:
+            matrix_2d()
+        elif test_type == "MAT_NUM" or int(test_type) == 5:
+            matrix_2d_number()
+        elif test_type == "ARR_NUM" or int(test_type) == 6:
+            array_number()
+        elif test_type == "STR_NUM" or int(test_type) == 7:
+            string_number()
+        elif test_type == "STR_DICT" or int(test_type) == 8:
+            string_dict()
+        elif test_type == "ARR_ARR" or int(test_type) == 9:
+            array_array()
+        elif test_type == "TREE_FRM_LST" or int(test_type) == 10:
+            tree_from_List()
+        elif test_type == "2_STRINGS" or int(test_type) == 11:
+            two_strings()
+        elif test_type == "2_LISTS" or int(test_type) == 12:
+            two_lists()

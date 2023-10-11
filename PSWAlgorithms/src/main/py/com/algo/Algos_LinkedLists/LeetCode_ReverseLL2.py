@@ -76,3 +76,46 @@ class Solution:
             left_count += 1
 
         return head
+
+    def reverseBetween_IK(self, head: Optional[ListNode], left: int, right: int) -> Optional[ListNode]:
+
+        def reverse_list(start_list, end):
+            end_index = 1
+            prev = None
+            curr = start_list
+
+            while curr and end_index <= end:
+                end_index += 1
+                succ = curr.next
+                curr.next = prev
+
+                prev = curr
+                curr = succ
+                # print(prev.val, succ.val, end_index)
+
+            return prev, curr
+
+        def print_list(head):
+            curr = head
+            while curr:
+                print(curr.val)
+                curr = curr.next
+
+        sentinel = ListNode(0, head)
+        prev = sentinel
+        curr = head
+        start_index = 1
+        while curr and start_index < left:
+            start_index += 1
+            prev = curr
+            curr = curr.next
+
+        # print("called", curr.val, right-left+1)
+        rev_end, rev_next = reverse_list(curr, right - left + 1)
+        # print("returned", rev_end.val, rev_next.val)
+        # print_list(rev_end)
+        # print("return at", prev.val, curr.val)
+        prev.next = rev_end
+        curr.next = rev_next
+
+        return sentinel.next
