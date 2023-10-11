@@ -1,5 +1,8 @@
 '''
-There are n people living in a town. Some of them dislike each other. Given the value of n and two equal length integer arrays called dislike1 and dislike2. For each i in [0, dislike1_size - 1], the person dislike1[i] dislikes the person dislike2[i]. Check if we can divide the people of the town into two sets such that each person belongs to exactly one set and no two persons disliking each other belong to the same set.
+There are n people living in a town. Some of them dislike each other. Given the value of n and two equal length
+ integer arrays called dislike1 and dislike2. For each i in [0, dislike1_size - 1], the person dislike1[i] 
+ dislikes the person dislike2[i]. Check if we can divide the people of the town into two sets such that 
+ each person belongs to exactly one set and no two persons disliking each other belong to the same set.
 
 Example One
 {
@@ -31,8 +34,8 @@ Constraints:
 # exists in alternate set
 # Second approach is to check if there are cycles (using cross edges for BFS). If there is a cycle with odd number of
 # nodes then it will not be bipartite but if cycle is with even number of nodes then it will be bipartite
-# because if there are 5 nodes and 5 edges connect them all then it will not be bipartite but if there are 6 nodes and 6 edges
-# then they will be bipartite
+# because if there are 5 nodes and 5 edges connect them all then it will not be bipartite but if there are 6 nodes
+# and 6 edges then they will be bipartite
 '''
             R                           R
         G       G                  G        G
