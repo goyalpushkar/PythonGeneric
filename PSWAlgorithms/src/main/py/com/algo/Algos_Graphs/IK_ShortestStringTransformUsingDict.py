@@ -53,7 +53,20 @@ Output:
 
 ["-1"]
 No sequence of strings exists that would satisfy all requirements. For example, ["zzzzzz", "zzzzzz"] does
- not satisfy requirement #3. In such situations, ["-1"] is the correct answer.
+not satisfy requirement #3. In such situations, ["-1"] is the correct answer.
+
+
+{
+"words": ["hot", "dot", "dog", "lot", "log", "cog", "fox"],
+"start": "hit",
+"stop": "cog"
+}  - ["hit", "hot", "dot", "dog", "cog"]
+
+{
+"words": ["poon", "plee", "same", "poie", "plie", "poin"],
+"start": "toon",
+"stop": "plea"
+} - ["toon", "poon", "poin", "poie", "plie", "plee", "plea"]
 
 Notes
 If two or more such sequences exist, return any.
@@ -66,19 +79,8 @@ Strings in words are not in any particular order.
 There may be duplicates in words.
 '''
 
-'''
-{
-"words": ["hot", "dot", "dog", "lot", "log", "cog", "fox"],
-"start": "hit",
-"stop": "cog"
-}  - ["hit", "hot", "dot", "dog", "cog"]
 
-{
-"words": ["poon", "plee", "same", "poie", "plie", "poin"],
-"start": "toon",
-"stop": "plea"
-} - ["toon", "poon", "poin", "poie", "plie", "plee", "plea"]
-'''
+## Always ue BFS for shortest possible path/ sequence of srings (Dijkstra's)
 def string_transformation(words, start, stop):
     """
     Args:
@@ -89,6 +91,118 @@ def string_transformation(words, start, stop):
     list_str
     """
     # Write your code here.
+    import string
+    from collections import deque
+
+    alphabets = list(string.ascii_lowercase)
+    visited = {}
+    parent = {}
+    node_track = deque()
+
+    # prepare words dictionary to improve word search
+    if len(words) > 26*len(start):
+        word_dict = set(words)
+    else:
+        words.append(stop)
+    # print(word_dict)
+
+    # get distance i.e. length of diferent characters between words
+    # length
+    def get_diff(word1, word2):
+        count = 0
+        for idx, chr in enumerate(word1):
+            if chr != word2[idx]:
+                count += 1
+            
+            if count > 1:
+                return False
+        
+        return True if count == 1 else False
+
+    # 26 * length (* length - to check for word existence)
+    def neighbors_usingallchr(curr_node):   # , parent, visited
+        found = False
+        for i, _ in enumerate(curr_node):
+            for chr in alphabets:
+                if curr_node[i] != chr:
+                    new_word = curr_node[:i] + chr + curr_node[i+1:]
+                    if new_word == stop:
+                        # print(f"stop found new_word:{new_word}")
+                        visited[new_word] = True
+                        parent[new_word] = curr_node
+                        found = True
+                        break
+                    
+                    if new_word not in visited and new_word in word_dict:
+                        # print(f"new_word:{new_word}")
+                        visited[new_word] = True
+                        parent[new_word] = curr_node
+                        node_track.append(new_word)
+
+        return found
+    
+    # no_of_words (* length - for get_diff) 
+    def neighbors_usingdict(curr_node):  # , parent, visited
+        # print(f"curr_node: {curr_node}")
+        found= False
+        
+        for new_word in words:
+            if new_word == stop and get_diff(curr_node, new_word): 
+                # print(f"stop found curr_node:{curr_node}")
+                visited[new_word] = True
+                parent[new_word] = curr_node
+                found = True
+                break
+            
+            if new_word not in visited and get_diff(curr_node, new_word):
+                # print(f"new_word:{new_word}")
+                visited[new_word] = True
+                parent[new_word] = curr_node
+                node_track.append(new_word)
+
+        return found
+    
+    # no_of_words
+    # Total O (no_of_words * min(no_of_words * length, 26 * length * length)) = O(no_of_words * length * min(no_of_words, 26 * length))
+    def bfs(start):
+        node_track.append(start)
+        visited[start] = True
+        parent[start] = -1
+        found = False
+        while node_track:
+            curr_node = node_track.popleft()
+            # print(f"curr_node:{curr_node}")
+            
+            if len(words) > 26*len(start):
+                found = neighbors_usingallchr(curr_node)
+            else:
+                found = neighbors_usingdict(curr_node)
+                            
+            if found:
+                break
+    
+    def get_result():
+        # if stop word found
+        if stop in parent and parent[stop] != -1:
+            result = []
+    
+            result.append(stop)
+            new_key = parent[stop]
+            # for key, val in sorted(parent.iteritems(), key=lambda x: x[0], reverse=True): # type: ignore
+            while new_key != start:
+                result.append(new_key)
+                new_key = parent[new_key]
+        
+            result.append(start)  
+            # result = result[:-1]
+            # print(f"result: {result}")
+            return list(reversed(result))
+        else:
+            return ["-1"]
+        
+    bfs(start)
+    print(f"parent: {parent}, visited: {visited}")
+    return get_result()
 
 
 # below approach is wrong as words from dictionary are not even considered to perform change
@@ -174,3 +288,52 @@ def string_transformation(words, start, stop):
     dfs([start], set())
     
     return final_result
+
+# Wrong not working at all
+def string_transformation(words, start, stop):
+    """
+    Args:
+    words(list_str)
+    start(str)
+    stop(str)
+    Returns:
+    list_str
+    """
+    # Write your code here.
+    import string
+    import math
+
+    alphabets = list(string.ascii_lowercase)
+    min_list = []
+    min_length = math.inf
+    def verify_word(word, current_list):
+        nonlocal min_list, min_length
+
+        if word in current_list:
+            return 0
+        
+        if word == stop:
+            return 1
+        
+        result = set()
+        local_min = math.inf
+        local_path = []
+        for i, _ in enumerate(word):
+            for chr in alphabets:
+                new_word = word[:i] + chr + word[i+1:]
+                if new_word in words:
+                    result.add(new_word)
+                    ret_result = verify_word(new_word, result)
+                    if ret_result == 1:
+                        if len(result) < local_min:
+                            local_min = len(result)
+                            local_path = list(result)
+
+        if len(local_path) < min_length:
+            min_length = len(local_path)
+            min_list = local_path
+            
+        return 0
+
+    verify_word(start, set())
+    return min_list if min_list: else ["-1"]
