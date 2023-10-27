@@ -36,6 +36,46 @@ Constraints:
 1 <= target <= 10^13
 '''
 
+def generate_all_expressions(s, target):
+    """
+    Args:
+     s(str)
+     target(int64)
+    Returns:
+     list_str
+    """
+    # Write your code here.
+    result = []
+
+    def helper(slate, index, value_so_far, last_value):
+        nonlocal result
+        # print(f"slate: {slate}, index: {index}, value_so_far: {value_so_far}, last_value: {last_value}")
+        if value_so_far == target:
+            if index == len(s):
+                result.append(slate)
+            
+                return
+                
+        
+        for i in range(index, len(s)):
+            curr_expr = s[index:i+1]
+            # print(f"curr_expr: {curr_expr}")
+            curr_val = int(curr_expr)
+            
+            if index == 0:
+                helper(curr_expr, i+1, value_so_far + curr_val, curr_val)
+            else:
+                # +
+                helper(slate+"+"+curr_expr, i+1, value_so_far + curr_val, curr_val)
+                
+                # *
+                helper(slate+"*"+curr_expr, i+1, (value_so_far - last_value) + (last_value*curr_val), last_value*curr_val)
+
+        
+        return
+
+    helper("", 0, 0, 0)
+    return result if result else []
 
 # Didnt pass all tests
 # half of them failed with time limit exceeded
